@@ -1,19 +1,18 @@
 package br.com.Dialog;
 
 import br.com.socialcoreo.R;
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
-import android.view.View;
 import android.view.Window;
 import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.EditText;
 
 public class DialogAjuda {
 	
 	Dialog dialog;
 	WebView webView;
 
+	@SuppressLint("SetJavaScriptEnabled")
 	public DialogAjuda(final Context c){
 		dialog = new Dialog(c);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

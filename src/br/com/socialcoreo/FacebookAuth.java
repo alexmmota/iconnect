@@ -1,16 +1,6 @@
 package br.com.socialcoreo;
 
-import java.io.IOException;
 import java.util.Arrays;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
-import org.apache.http.util.EntityUtils;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -19,27 +9,19 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
-
 import br.com.socialcoreo.R;
+import br.com.util.ClientREST;
 import br.com.util.PreferenceUtil;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.webkit.WebView;
 
 public class FacebookAuth extends Activity {
 	private UiLifecycleHelper uiHelper;
-	private String URL_REST = "http://br-com-iconnected.herokuapp.com/facebook/savetoken/";
 	private WebView wb1;
-	private HttpContext localContext = null;
-	private HttpClient client = null;
-	private HttpGet get = null;
-	private HttpResponse responseHttp = null;
-	
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -87,39 +69,13 @@ public class FacebookAuth extends Activity {
 		
 		Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
         if (Session.getActiveSession().isOpened()) {
-            // Request user data and show the results
             Request.executeMeRequestAsync(Session.getActiveSession(), new Request.GraphUserCallback() {
 
                 @Override
                 public void onCompleted(GraphUser user, Response response) {
                     if (user != null) {
                     	String accessToken = Session.getActiveSession().getAccessToken();
-                    	
-                    	TelephonyManager tMgr =(TelephonyManager)getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-                    	String telefone = tMgr.getLine1Number();
-                    	
-                    	if((telefone == null)||(telefone.equals("")))
-                    		telefone = "123";
-
-                    	localContext = new BasicHttpContext();
-                    	client = new DefaultHttpClient();
-                    	get = new HttpGet(URL_REST+accessToken+"/"+user.getId()+"/"+telefone);
-                    	get.setHeader("Content-type", "text/plain");
-						
-                    	new Thread(new Runnable(){
-							    @Override
-							    public void run() {
-							        try {
-										responseHttp = client.execute(get,localContext);
-				                    	String responseBody = EntityUtils.toString(responseHttp.getEntity());
-				                		Log.i("TESTE","token_face: "+responseBody);
-
-				            			PreferenceUtil.setPreferences(FacebookAuth.this, "TOKEN_FACEBOOK", responseBody);
-							        } catch (Exception e) {
-							            e.printStackTrace();
-							        }
-							    }
-							}).start();							
+                    	ClientREST.getInstance().callWebServiceFace(getApplicationContext(), accessToken, user.getId());                    	
                     }
                 }
             });
@@ -142,6 +98,11 @@ public class FacebookAuth extends Activity {
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 		uiHelper.onSaveInstanceState(outState);
+	}
+	
+	public void disconnect(){
+		Session.getActiveSession().closeAndClearTokenInformation();
+		PreferenceUtil.setPreferences(FacebookAuth.this, "TOKEN_FACEBOOK", "");
 	}
 
 }

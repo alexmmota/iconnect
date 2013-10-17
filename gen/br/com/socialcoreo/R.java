@@ -317,9 +317,10 @@ containing a value of this type.
         public static final int dialog_ajuda=0x7f03000f;
         public static final int dialog_facebook=0x7f030010;
         public static final int dialog_mail=0x7f030011;
-        public static final int facebook_auth=0x7f030012;
-        public static final int login_activity=0x7f030013;
-        public static final int main_activity=0x7f030014;
+        public static final int dialog_twitter=0x7f030012;
+        public static final int facebook_auth=0x7f030013;
+        public static final int login_activity=0x7f030014;
+        public static final int main_activity=0x7f030015;
     }
     public static final class menu {
         public static final int login=0x7f090000;

@@ -8,7 +8,7 @@ public class SendSMS {
 
 	public static void sendSMSFacebook(String text, Context c){		
 		String token = PreferenceUtil.getPreferences(c, "TOKEN_FACEBOOK");
-		String msgSMS = "post:"+token+text;
+		String msgSMS = "#f"+token+text;
 		send(msgSMS);
 	}
 	
@@ -17,6 +17,12 @@ public class SendSMS {
 		send(msgEmail);
 	}
 	
+	public static void sendSMSTwitter(String text, Context c){
+		String token = PreferenceUtil.getPreferences(c, "TOKEN_TWITTER");		
+		String msgSMS = "#t"+token+text;
+		send(msgSMS);
+	}
+
 	private static void send(String sms){
 		SmsManager smsManager = SmsManager.getDefault();
 		smsManager.sendTextMessage(numCoreo, null, sms, null, null);		

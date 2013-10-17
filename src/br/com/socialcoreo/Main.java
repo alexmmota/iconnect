@@ -10,6 +10,8 @@ import twitter4j.conf.ConfigurationBuilder;
 import br.com.Dialog.DialogAjuda;
 import br.com.Dialog.DialogFacebook;
 import br.com.Dialog.DialogMail;
+import br.com.Dialog.DialogTwitter;
+import br.com.util.ClientREST;
 import br.com.util.PreferenceUtil;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -19,7 +21,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -43,7 +44,7 @@ public class Main extends Activity {
 	private ImageButton btExit;
 	private LinearLayout btFacebook, btTwitter, btEmail, btAjuda;
 	private boolean flagDialog = false;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,12 +56,7 @@ public class Main extends Activity {
 		btAjuda = (LinearLayout) findViewById(R.id.btAjuda);
 		btExit = (ImageButton) findViewById(R.id.btExit);
 
-		TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-		String telefone = tMgr.getLine1Number();
-		Log.i("TESTE",
-				"token: "
-						+ PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK"));
-		Log.i("FONE", "fone: " + telefone);
+		Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK"));
 
 		btExit.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -96,13 +92,14 @@ public class Main extends Activity {
 		if (uri != null && uri.toString().startsWith(CALLBACK_URL)) {
 			String verifier = uri.getQueryParameter(IEXTRA_OAUTH_VERIFIER);
 			try {
-				AccessToken accessToken = twitter.getOAuthAccessToken(
-						requestToken, verifier);
-				String tokenSecret = accessToken.getTokenSecret();
+				AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
+				
+				ClientREST.getInstance().callWebServiceTwitter(getApplicationContext(), 
+						accessToken.getToken(), accessToken.getTokenSecret());
+
 				Log.i("TOKEN_TWITTER", "twitter " + accessToken.getToken());
-				Log.i("TOKEN_TWITTER", "secret " + tokenSecret);
-			} catch (Exception e) {
-			}
+				Log.i("TOKEN_TWITTER", "secret " + accessToken.getTokenSecret());
+			} catch (Exception e) {}
 		}
 
 	}
@@ -135,19 +132,23 @@ public class Main extends Activity {
 	}
 
 	private void autenticaTwitter() {
-		ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
-		configurationBuilder.setOAuthConsumerKey(CONSUMER_KEY);
-		configurationBuilder.setOAuthConsumerSecret(CONSUMER_SECRET);
-		Configuration configuration = configurationBuilder.build();
-		twitter = new TwitterFactory(configuration).getInstance();
-
-		try {
-			requestToken = twitter.getOAuthRequestToken(CALLBACK_URL);
-			this.startActivityForResult(
-					new Intent(Intent.ACTION_VIEW, Uri.parse(requestToken
-							.getAuthenticationURL())), 1);
-		} catch (TwitterException e) {
-			e.printStackTrace();
+		if (PreferenceUtil.getPreferences(this, "TOKEN_TWITTER").equals("")) {
+			if(isConnected()){
+				ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+				configurationBuilder.setOAuthConsumerKey(CONSUMER_KEY);
+				configurationBuilder.setOAuthConsumerSecret(CONSUMER_SECRET);
+				Configuration configuration = configurationBuilder.build();
+				twitter = new TwitterFactory(configuration).getInstance();
+		
+				try {
+					requestToken = twitter.getOAuthRequestToken(CALLBACK_URL);
+					this.startActivityForResult(new Intent(Intent.ACTION_VIEW, Uri.parse(requestToken.getAuthenticationURL())), 1);
+				} catch (TwitterException e) {
+					e.printStackTrace();
+				}
+			}
+		} else {
+			new DialogTwitter(Main.this);
 		}
 	}
 
