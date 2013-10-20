@@ -235,19 +235,20 @@ containing a value of this type.
         public static final int twitter2=0x7f020030;
     }
     public static final class id {
-        public static final int action_settings=0x7f04003a;
+        public static final int action_settings=0x7f04003b;
         public static final int authButton=0x7f040028;
-        public static final int btAjuda=0x7f040037;
+        public static final int btAjuda=0x7f040038;
         public static final int btCadastro=0x7f040007;
         public static final int btCancelar=0x7f040022;
-        public static final int btEmail=0x7f040034;
+        public static final int btEmail=0x7f040035;
         public static final int btEnviar=0x7f040027;
-        public static final int btExit=0x7f04002d;
-        public static final int btFacebook=0x7f04002f;
-        public static final int btLogin=0x7f04002a;
+        public static final int btExit=0x7f04002e;
+        public static final int btFacebook=0x7f040030;
+        public static final int btLogin=0x7f04002b;
         public static final int btPublicar=0x7f040023;
-        public static final int btTwitter=0x7f040030;
+        public static final int btTwitter=0x7f040031;
         public static final int btVoltar=0x7f040008;
+        public static final int checkBox1=0x7f04002a;
         public static final int com_facebook_login_activity_progress_bar=0x7f04000b;
         public static final int com_facebook_picker_activity_circle=0x7f04000a;
         public static final int com_facebook_picker_checkbox=0x7f04000d;
@@ -277,22 +278,22 @@ containing a value of this type.
         public static final int etSenha2=0x7f040006;
         public static final int etUsuario=0x7f040004;
         public static final int imageView1=0x7f040020;
-        public static final int imageView2=0x7f040031;
-        public static final int imageView3=0x7f040035;
-        public static final int imageView4=0x7f040038;
-        public static final int imageView5=0x7f04002c;
+        public static final int imageView2=0x7f040032;
+        public static final int imageView3=0x7f040036;
+        public static final int imageView4=0x7f040039;
+        public static final int imageView5=0x7f04002d;
         public static final int large=0x7f040002;
         public static final int logo1=0x7f040003;
         public static final int normal=0x7f040001;
         public static final int picker_subtitle=0x7f040018;
         public static final int small=0x7f040000;
-        public static final int tableRow1=0x7f04002b;
-        public static final int tableRow2=0x7f04002e;
-        public static final int tableRow3=0x7f040033;
+        public static final int tableRow1=0x7f04002c;
+        public static final int tableRow2=0x7f04002f;
+        public static final int tableRow3=0x7f040034;
         public static final int textView1=0x7f04001e;
-        public static final int textView2=0x7f040032;
-        public static final int textView3=0x7f040036;
-        public static final int textView4=0x7f040039;
+        public static final int textView2=0x7f040033;
+        public static final int textView3=0x7f040037;
+        public static final int textView4=0x7f04003a;
         public static final int webView1=0x7f04001f;
     }
     public static final class layout {

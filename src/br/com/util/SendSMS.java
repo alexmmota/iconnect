@@ -13,7 +13,34 @@ public class SendSMS {
 	}
 	
 	public static void sendSMSEmail(String to, String subject, String text){
-		String msgEmail = "post:/"+to+"/"+subject+"/"+text;
+		
+		String[] v = to.split("@");
+		int t1 = v[0].length();
+		int t2 = v[1].length();
+		int t3 = subject.length();
+		int t4 = text.length();
+		
+		
+		for(int i = t1; i < 20; i++){
+			v[0] = ";" + v[0];
+		}
+		
+		for(int i = t2; i < 20; i++){
+			v[1] += ";";
+		}
+		
+		for(int i = t3; i < 20; i++){
+			subject += ";";
+		}
+		
+		for(int i = t4; i < 98; i++){
+			text += ";";
+		}
+		
+		to = v[0] + v[1];
+		
+		String msgEmail = "#m" + to + subject + text;
+		
 		send(msgEmail);
 	}
 	
