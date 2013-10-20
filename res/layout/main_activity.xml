@@ -23,13 +23,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#3B5998"
-                android:gravity="end"
+                android:gravity="right"
                 android:weightSum="2" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" 
-                    android:layout_gravity="start"
+                    android:layout_gravity="left"
                     android:layout_weight="1" >
 
                     <ImageView
@@ -37,7 +37,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="15dp"
-                        android:src="@drawable/logo2" />
+                        android:src="@drawable/logo2"
+                        android:contentDescription="@string/main_act_logo_desc" />
 
                 </LinearLayout>
 
@@ -45,7 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="end" >
+                    android:gravity="right" >
 
                     <ImageButton
                         android:id="@+id/btExit"
@@ -54,7 +55,8 @@
                         android:layout_marginBottom="2dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="2dp"
-                        android:background="@drawable/bt_shapez"
+                        android:background="@drawable/bt3"
+                        android:contentDescription="@string/main_act_bt_exit_icon_desc"
                         android:src="@drawable/exit" />
 
                 </LinearLayout>
@@ -85,7 +87,7 @@
                     android:layout_marginRight="1dp"
                     android:layout_marginTop="2dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bt_shapex"
+                    android:background="@drawable/bt4"
                     android:clickable="true"
                     android:gravity="center"
                     android:orientation="vertical" >
@@ -95,14 +97,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:src="@drawable/facebook" />
+                        android:src="@drawable/facebook"
+                        android:contentDescription="@string/main_act_face_icon_desc" />
 
                     <TextView
                         android:id="@+id/textView1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Facebook"
+                        android:text="@string/main_act_bt_face_title"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#3B5998" />
 
@@ -117,7 +120,7 @@
                     android:layout_marginRight="2dp"
                     android:layout_marginTop="2dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bt_shapex"
+                    android:background="@drawable/bt4"
                     android:clickable="true"
                     android:gravity="center"
                     android:orientation="vertical" >
@@ -127,14 +130,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:src="@drawable/twitter" />
+                        android:src="@drawable/twitter"
+                        android:contentDescription="@string/main_act_tw_icon_desc" />
 
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Twitter"
+                        android:text="@string/main_act_bt_tw_title"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#3B5998" />
 
@@ -166,7 +170,7 @@
                     android:layout_marginRight="1dp"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bt_shapex"
+                    android:background="@drawable/bt4"
                     android:clickable="true"
                     android:gravity="center"
                     android:orientation="vertical" >
@@ -177,7 +181,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:src="@drawable/email" />
+                        android:src="@drawable/email" 
+                        android:contentDescription="@string/main_act_mail_icon_desc"/>
 
                     <TextView
                         android:id="@+id/textView3"
@@ -185,7 +190,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:text="Email"
+                        android:text="@string/main_act_bt_mail_title"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#3B5998" />
 
@@ -201,7 +206,7 @@
                     android:layout_marginRight="2dp"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bt_shapex"
+                    android:background="@drawable/bt4"
                     android:clickable="true"
                     android:gravity="center"
                     android:orientation="vertical" >
@@ -212,7 +217,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:src="@drawable/about" />
+                        android:src="@drawable/about"
+                        android:contentDescription="@string/main_act_help_icon_desc" />
 
                     <TextView
                         android:id="@+id/textView4"
@@ -220,7 +226,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:text="Ajuda"
+                        android:text="@string/main_act_bt_help_title"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#3B5998" />
 

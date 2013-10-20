@@ -13,7 +13,7 @@
         android:layout_margin="2dp"
         android:layout_weight="1"
         android:background="#3B5998"
-        android:gravity="center|start"
+        android:gravity="center|left"
         android:orientation="horizontal" >
 
         <TextView
@@ -23,7 +23,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:text="Ajuda"
+            android:text="@string/dial_help_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#ffffff"
             android:textStyle="bold" />

@@ -28,9 +28,8 @@ public class FacebookAuth extends Activity {
 		setContentView(R.layout.facebook_auth);
 		uiHelper = new UiLifecycleHelper(this, callback);
 		uiHelper.onCreate(savedInstanceState);
-		String data = "<html><body><p style='text-align:justify'>Acesse sua conta do Facebook e autorize o aplicativo IConnect a publicar no seu mural, para que você possa publicar sem acesso à internet.</body></html>";
 		wb1 = (WebView)findViewById(R.id.webView1);
-		wb1.loadDataWithBaseURL("", data, "text/html", "UTF-8", "");
+		wb1.loadUrl("file:///android_asset/facebook.html");
 		
 		LoginButton authButton = (LoginButton) findViewById(R.id.authButton);
 		authButton.setPublishPermissions(Arrays.asList("publish_actions", "publish_stream"));

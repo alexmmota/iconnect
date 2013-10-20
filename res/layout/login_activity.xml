@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"
+            android:contentDescription="@string/log_act_logo_desc" />
 
     </LinearLayout>
 
@@ -31,8 +32,10 @@
             android:id="@+id/etLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:ems="10" >
+            android:layout_margin="4dp"
+            android:background="@drawable/et1"
+            android:ems="10"
+            android:hint="@string/log_act_et_usr_hint" >
 
             <requestFocus />
         </EditText> 
@@ -41,8 +44,10 @@
             android:id="@+id/etSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/et1"
             android:ems="10"
+            android:hint="@string/log_act_et_pwd_hint"
             android:inputType="textPassword" />
 
     </LinearLayout>
@@ -56,12 +61,12 @@
             android:id="@+id/btLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="4dp"
             android:layout_marginRight="1dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:background="@drawable/bt_shapey"
-            android:text="ENTRAR"
+            android:background="@drawable/bt1"
+            android:text="@string/log_act_bt_ent"
             android:textColor="#ffffff"
             android:textColorHint="#ffffff"
             android:textStyle="bold" />
@@ -71,11 +76,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="1dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginRight="4dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:background="@drawable/bt_shapey"
-            android:text="CADASTRAR"
+            android:background="@drawable/bt1"
+            android:text="@string/log_act_bt_cad"
             android:textColor="#ffffff"
             android:textColorHint="#ffffff"
             android:textStyle="bold" />

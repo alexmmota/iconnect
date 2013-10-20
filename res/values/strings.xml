@@ -6,4 +6,51 @@
     <string name="hello_world">Hello world!</string>
     <string name="app_id">597582926970321</string>
     
+    <string name="cad_act_et_usr_hint">Nome de Usuário</string>
+    <string name="cad_act_et_pwd_hint">Senha</string>
+    <string name="cad_act_et_pwd_hint2">Repita a Senha</string>
+    <string name="cad_act_bt_cad">CADASTRAR</string>
+    <string name="cad_act_bt_voltar">VOLTAR</string>
+    <string name="cad_act_logo_desc">Logotipo</string>
+    
+    <string name="dial_help_title">Ajuda</string>
+    
+    <string name="dial_face_title">Publicar no Facebook</string>
+    <string name="dial_face_icon_desc">Facebook Icon</string>
+    <string name="dial_face_bt_canc">Cancelar</string>
+    <string name="dial_face_bt_pub">Publicar</string>
+    
+    <string name="dial_mail_icon_desc">Mail Icon</string>
+    <string name="dial_mail_title">Enviar Email</string>
+    <string name="dial_mail_et_dest_hint">Destinatário</string>
+    <string name="dial_mail_et_subj_hint">Assunto</string>
+    <string name="dial_mail_et_mes_hint">Mensagem</string>
+    <string name="dial_mail_bt_canc">Cancelar</string>
+    <string name="dial_mail_bt_env">Enviar</string>
+    
+    <string name="dial_tw_title">Publicar no Twitter</string>
+    <string name="dial_tw_icon_desc">Twitter Icon</string>
+    <string name="dial_tw_bt_canc">Cancelar</string>
+    <string name="dial_tw_bt_pub">Publicar</string>
+    
+    <string name="log_act_logo_desc">Logotipo</string>
+    <string name="log_act_et_usr_hint">Nome de Usuário</string>
+    <string name="log_act_et_pwd_hint">Senha</string>
+    <string name="log_act_bt_ent">ENTRAR</string>
+    <string name="log_act_bt_cad">CADASTRAR</string>
+    
+    <string name="main_act_logo_desc">Logotipo</string>
+    <string name="main_act_face_icon_desc">Facebook Icon</string>
+    <string name="main_act_tw_icon_desc">Twitter Icon</string>
+    <string name="main_act_mail_icon_desc">Mail Icon</string>
+    <string name="main_act_help_icon_desc">Help Icon</string>
+    <string name="main_act_bt_exit_icon_desc">Exit Icon</string>
+    <string name="main_act_bt_face_title">Facebook</string>
+    <string name="main_act_bt_tw_title">Twitter</string>
+    <string name="main_act_bt_mail_title">Email</string>
+    <string name="main_act_bt_help_title">Ajudar</string>
+    
+    <string name="face_auth_face_icon_desc">Facebook Icon</string>
+    <string name="face_auth_title">Ativar</string>
+    
 </resources>

@@ -21,8 +21,7 @@ public class DialogAjuda {
 		dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 		
 		webView = (WebView) dialog.findViewById(R.id.webView1);
-		webView.getSettings().setJavaScriptEnabled(true);
-		webView.loadUrl("file:///android_asset/index.html");
+		webView.loadUrl("file:///android_asset/help.html");
 		
 		dialog.show();
 	}

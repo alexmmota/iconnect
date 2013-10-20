@@ -184,58 +184,55 @@ containing a value of this type.
     }
     public static final class drawable {
         public static final int about=0x7f020000;
-        public static final int bt_shapex=0x7f020001;
-        public static final int bt_shapey=0x7f020002;
-        public static final int bt_shapez=0x7f020003;
-        public static final int com_facebook_button_blue=0x7f020004;
-        public static final int com_facebook_button_blue_focused=0x7f020005;
-        public static final int com_facebook_button_blue_normal=0x7f020006;
-        public static final int com_facebook_button_blue_pressed=0x7f020007;
-        public static final int com_facebook_button_check=0x7f020008;
-        public static final int com_facebook_button_check_off=0x7f020009;
-        public static final int com_facebook_button_check_on=0x7f02000a;
-        public static final int com_facebook_button_grey_focused=0x7f02000b;
-        public static final int com_facebook_button_grey_normal=0x7f02000c;
-        public static final int com_facebook_button_grey_pressed=0x7f02000d;
-        public static final int com_facebook_close=0x7f02000e;
-        public static final int com_facebook_inverse_icon=0x7f02000f;
-        public static final int com_facebook_list_divider=0x7f020010;
-        public static final int com_facebook_list_section_header_background=0x7f020011;
-        public static final int com_facebook_loginbutton_silver=0x7f020012;
-        public static final int com_facebook_logo=0x7f020013;
-        public static final int com_facebook_picker_default_separator_color=0x7f020034;
-        public static final int com_facebook_picker_item_background=0x7f020014;
-        public static final int com_facebook_picker_list_focused=0x7f020015;
-        public static final int com_facebook_picker_list_longpressed=0x7f020016;
-        public static final int com_facebook_picker_list_pressed=0x7f020017;
-        public static final int com_facebook_picker_list_selector=0x7f020018;
-        public static final int com_facebook_picker_list_selector_background_transition=0x7f020019;
-        public static final int com_facebook_picker_list_selector_disabled=0x7f02001a;
-        public static final int com_facebook_picker_magnifier=0x7f02001b;
-        public static final int com_facebook_picker_top_button=0x7f02001c;
-        public static final int com_facebook_place_default_icon=0x7f02001d;
-        public static final int com_facebook_profile_default_icon=0x7f02001e;
-        public static final int com_facebook_profile_picture_blank_portrait=0x7f02001f;
-        public static final int com_facebook_profile_picture_blank_square=0x7f020020;
-        public static final int com_facebook_top_background=0x7f020021;
-        public static final int com_facebook_top_button=0x7f020022;
-        public static final int com_facebook_usersettingsfragment_background_gradient=0x7f020023;
-        public static final int config=0x7f020024;
-        public static final int config_body=0x7f020025;
-        public static final int config_button=0x7f020026;
-        public static final int dialgon_buttonx=0x7f020027;
-        public static final int dialog_button=0x7f020028;
-        public static final int dialog_shape=0x7f020029;
-        public static final int email=0x7f02002a;
-        public static final int exit=0x7f02002b;
-        public static final int facebook=0x7f02002c;
-        public static final int facebook2=0x7f02002d;
-        public static final int ic_launcher=0x7f02002e;
-        public static final int logo=0x7f02002f;
-        public static final int logo2=0x7f020030;
-        public static final int main_body=0x7f020031;
-        public static final int main_button=0x7f020032;
-        public static final int twitter=0x7f020033;
+        public static final int bt1=0x7f020001;
+        public static final int bt2=0x7f020002;
+        public static final int bt3=0x7f020003;
+        public static final int bt4=0x7f020004;
+        public static final int com_facebook_button_blue=0x7f020005;
+        public static final int com_facebook_button_blue_focused=0x7f020006;
+        public static final int com_facebook_button_blue_normal=0x7f020007;
+        public static final int com_facebook_button_blue_pressed=0x7f020008;
+        public static final int com_facebook_button_check=0x7f020009;
+        public static final int com_facebook_button_check_off=0x7f02000a;
+        public static final int com_facebook_button_check_on=0x7f02000b;
+        public static final int com_facebook_button_grey_focused=0x7f02000c;
+        public static final int com_facebook_button_grey_normal=0x7f02000d;
+        public static final int com_facebook_button_grey_pressed=0x7f02000e;
+        public static final int com_facebook_close=0x7f02000f;
+        public static final int com_facebook_inverse_icon=0x7f020010;
+        public static final int com_facebook_list_divider=0x7f020011;
+        public static final int com_facebook_list_section_header_background=0x7f020012;
+        public static final int com_facebook_loginbutton_silver=0x7f020013;
+        public static final int com_facebook_logo=0x7f020014;
+        public static final int com_facebook_picker_default_separator_color=0x7f020031;
+        public static final int com_facebook_picker_item_background=0x7f020015;
+        public static final int com_facebook_picker_list_focused=0x7f020016;
+        public static final int com_facebook_picker_list_longpressed=0x7f020017;
+        public static final int com_facebook_picker_list_pressed=0x7f020018;
+        public static final int com_facebook_picker_list_selector=0x7f020019;
+        public static final int com_facebook_picker_list_selector_background_transition=0x7f02001a;
+        public static final int com_facebook_picker_list_selector_disabled=0x7f02001b;
+        public static final int com_facebook_picker_magnifier=0x7f02001c;
+        public static final int com_facebook_picker_top_button=0x7f02001d;
+        public static final int com_facebook_place_default_icon=0x7f02001e;
+        public static final int com_facebook_profile_default_icon=0x7f02001f;
+        public static final int com_facebook_profile_picture_blank_portrait=0x7f020020;
+        public static final int com_facebook_profile_picture_blank_square=0x7f020021;
+        public static final int com_facebook_top_background=0x7f020022;
+        public static final int com_facebook_top_button=0x7f020023;
+        public static final int com_facebook_usersettingsfragment_background_gradient=0x7f020024;
+        public static final int email=0x7f020025;
+        public static final int email2=0x7f020026;
+        public static final int et1=0x7f020027;
+        public static final int et2=0x7f020028;
+        public static final int exit=0x7f020029;
+        public static final int facebook=0x7f02002a;
+        public static final int facebook2=0x7f02002b;
+        public static final int ic_launcher=0x7f02002c;
+        public static final int logo=0x7f02002d;
+        public static final int logo2=0x7f02002e;
+        public static final int twitter=0x7f02002f;
+        public static final int twitter2=0x7f020030;
     }
     public static final class id {
         public static final int action_settings=0x7f04003a;
@@ -329,6 +326,12 @@ containing a value of this type.
         public static final int action_settings=0x7f07001a;
         public static final int app_id=0x7f07001c;
         public static final int app_name=0x7f070019;
+        public static final int cad_act_bt_cad=0x7f070020;
+        public static final int cad_act_bt_voltar=0x7f070021;
+        public static final int cad_act_et_pwd_hint=0x7f07001e;
+        public static final int cad_act_et_pwd_hint2=0x7f07001f;
+        public static final int cad_act_et_usr_hint=0x7f07001d;
+        public static final int cad_act_logo_desc=0x7f070022;
         public static final int com_facebook_choose_friends=0x7f07000f;
         public static final int com_facebook_dialogloginactivity_ok_button=0x7f070000;
         public static final int com_facebook_internet_permission_error_message=0x7f070013;
@@ -354,7 +357,40 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_log_in_button=0x7f070008;
         public static final int com_facebook_usersettingsfragment_logged_in=0x7f070009;
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f07000a;
+        public static final int dial_face_bt_canc=0x7f070026;
+        public static final int dial_face_bt_pub=0x7f070027;
+        public static final int dial_face_icon_desc=0x7f070025;
+        public static final int dial_face_title=0x7f070024;
+        public static final int dial_help_title=0x7f070023;
+        public static final int dial_mail_bt_canc=0x7f07002d;
+        public static final int dial_mail_bt_env=0x7f07002e;
+        public static final int dial_mail_et_dest_hint=0x7f07002a;
+        public static final int dial_mail_et_mes_hint=0x7f07002c;
+        public static final int dial_mail_et_subj_hint=0x7f07002b;
+        public static final int dial_mail_icon_desc=0x7f070028;
+        public static final int dial_mail_title=0x7f070029;
+        public static final int dial_tw_bt_canc=0x7f070031;
+        public static final int dial_tw_bt_pub=0x7f070032;
+        public static final int dial_tw_icon_desc=0x7f070030;
+        public static final int dial_tw_title=0x7f07002f;
+        public static final int face_auth_face_icon_desc=0x7f070042;
+        public static final int face_auth_title=0x7f070043;
         public static final int hello_world=0x7f07001b;
+        public static final int log_act_bt_cad=0x7f070037;
+        public static final int log_act_bt_ent=0x7f070036;
+        public static final int log_act_et_pwd_hint=0x7f070035;
+        public static final int log_act_et_usr_hint=0x7f070034;
+        public static final int log_act_logo_desc=0x7f070033;
+        public static final int main_act_bt_exit_icon_desc=0x7f07003d;
+        public static final int main_act_bt_face_title=0x7f07003e;
+        public static final int main_act_bt_help_title=0x7f070041;
+        public static final int main_act_bt_mail_title=0x7f070040;
+        public static final int main_act_bt_tw_title=0x7f07003f;
+        public static final int main_act_face_icon_desc=0x7f070039;
+        public static final int main_act_help_icon_desc=0x7f07003c;
+        public static final int main_act_logo_desc=0x7f070038;
+        public static final int main_act_mail_icon_desc=0x7f07003b;
+        public static final int main_act_tw_icon_desc=0x7f07003a;
     }
     public static final class style {
         /** 
@@ -366,17 +402,6 @@ containing a value of this type.
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f080002;
         /**  Application theme. 
@@ -411,7 +436,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:multi_select
+          @attr name br.com.socialcoreo:multi_select
         */
         public static final int com_facebook_friend_picker_fragment_multi_select = 0;
         /** Attributes that can be used with a com_facebook_login_view.
@@ -444,7 +469,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:confirm_logout
+          @attr name br.com.socialcoreo:confirm_logout
         */
         public static final int com_facebook_login_view_confirm_logout = 0;
         /**
@@ -458,7 +483,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:fetch_user_info
+          @attr name br.com.socialcoreo:fetch_user_info
         */
         public static final int com_facebook_login_view_fetch_user_info = 1;
         /**
@@ -472,7 +497,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:login_text
+          @attr name br.com.socialcoreo:login_text
         */
         public static final int com_facebook_login_view_login_text = 2;
         /**
@@ -486,7 +511,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:logout_text
+          @attr name br.com.socialcoreo:logout_text
         */
         public static final int com_facebook_login_view_logout_text = 3;
         /** Attributes that can be used with a com_facebook_picker_fragment.
@@ -522,7 +547,7 @@ containing a value of this type.
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:done_button_background
+          @attr name br.com.socialcoreo:done_button_background
         */
         public static final int com_facebook_picker_fragment_done_button_background = 6;
         /**
@@ -536,7 +561,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:done_button_text
+          @attr name br.com.socialcoreo:done_button_text
         */
         public static final int com_facebook_picker_fragment_done_button_text = 4;
         /**
@@ -550,7 +575,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:extra_fields
+          @attr name br.com.socialcoreo:extra_fields
         */
         public static final int com_facebook_picker_fragment_extra_fields = 1;
         /**
@@ -564,7 +589,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:show_pictures
+          @attr name br.com.socialcoreo:show_pictures
         */
         public static final int com_facebook_picker_fragment_show_pictures = 0;
         /**
@@ -578,7 +603,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:show_title_bar
+          @attr name br.com.socialcoreo:show_title_bar
         */
         public static final int com_facebook_picker_fragment_show_title_bar = 2;
         /**
@@ -588,7 +613,7 @@ containing a value of this type.
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:title_bar_background
+          @attr name br.com.socialcoreo:title_bar_background
         */
         public static final int com_facebook_picker_fragment_title_bar_background = 5;
         /**
@@ -602,7 +627,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:title_text
+          @attr name br.com.socialcoreo:title_text
         */
         public static final int com_facebook_picker_fragment_title_text = 3;
         /** Attributes that can be used with a com_facebook_place_picker_fragment.
@@ -635,7 +660,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:radius_in_meters
+          @attr name br.com.socialcoreo:radius_in_meters
         */
         public static final int com_facebook_place_picker_fragment_radius_in_meters = 0;
         /**
@@ -649,7 +674,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:results_limit
+          @attr name br.com.socialcoreo:results_limit
         */
         public static final int com_facebook_place_picker_fragment_results_limit = 1;
         /**
@@ -663,7 +688,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:search_text
+          @attr name br.com.socialcoreo:search_text
         */
         public static final int com_facebook_place_picker_fragment_search_text = 2;
         /**
@@ -677,7 +702,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:show_search_box
+          @attr name br.com.socialcoreo:show_search_box
         */
         public static final int com_facebook_place_picker_fragment_show_search_box = 3;
         /** Attributes that can be used with a com_facebook_profile_picture_view.
@@ -706,7 +731,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:is_cropped
+          @attr name br.com.socialcoreo:is_cropped
         */
         public static final int com_facebook_profile_picture_view_is_cropped = 1;
         /**
@@ -724,7 +749,7 @@ containing a value of this type.
 <tr><td><code>normal</code></td><td>-3</td><td></td></tr>
 <tr><td><code>large</code></td><td>-4</td><td></td></tr>
 </table>
-          @attr name android:preset_size
+          @attr name br.com.socialcoreo:preset_size
         */
         public static final int com_facebook_profile_picture_view_preset_size = 0;
     };

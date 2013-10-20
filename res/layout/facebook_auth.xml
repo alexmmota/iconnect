@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         android:background="#3B5998"
-        android:gravity="center|start"
+        android:gravity="center|left"
         android:orientation="horizontal" >
 
         <ImageView
@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:contentDescription="@string/face_auth_face_icon_desc"
             android:src="@drawable/facebook2" />
 
         <TextView
@@ -29,7 +30,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:text="Ativar"
+            android:text="@string/face_auth_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#ffffff"
             android:textStyle="bold" />
@@ -44,7 +45,7 @@
         <WebView
             android:id="@+id/webView1"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="0dip"
             android:layout_marginTop="20dp"
             android:layout_weight="0.65" />
 
@@ -62,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/bt_shapex" />
+                android:background="@drawable/bt4" />
         </LinearLayout>
     </LinearLayout>
 

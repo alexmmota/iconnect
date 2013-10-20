@@ -6,7 +6,7 @@
                 android:startColor="#ffffff"
                 android:endColor="#30ffffff"
                 android:angle="270" />
-            <padding android:bottom="4dp" android:top="4dp" />
+            <padding android:bottom="10dp" android:top="10dp" />
 
         </shape>
     </item>
@@ -16,7 +16,7 @@
                 android:startColor="#3B5998"
                 android:endColor="#3B5998"
                 android:angle="270" />
-            <padding android:bottom="4dp" android:top="4dp" />
+            <padding android:bottom="10dp" android:top="10dp" />
 
         </shape>
     </item>
