@@ -234,6 +234,7 @@
             </LinearLayout>
 
         </TableRow>
-    </TableLayout>
 
+    </TableLayout>
+    
 </LinearLayout>

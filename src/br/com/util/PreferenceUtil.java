@@ -14,6 +14,6 @@ public class PreferenceUtil {
 	
 	public static String getPreferences(Context context, String chave){
 		SharedPreferences settings = context.getSharedPreferences("IConnectPreferences", 0);
-		return settings.getString(chave, "");
+		return settings.getString(chave, null);
 	}
 }
