@@ -60,6 +60,7 @@ public class Main extends Activity {
 
 		btExit.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
+				//VERIFICAR USUARIO ATIVO PARA DAR OPÇÃO DE LOGOFF SE NÃO TIVER USUARIO ATIVO, SIMPLESMENTE FECHA
 				finish();
 			}
 		});

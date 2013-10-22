@@ -26,6 +26,7 @@ public class Login extends Activity {
 		if(verificarUsuarioAtivo()){
 			Intent it = new Intent(Login.this, Main.class);
 			startActivity(it);
+			Login.this.finish();
 			finish();
 		}
 		
@@ -66,11 +67,17 @@ public class Login extends Activity {
 	
 	public boolean validaUsuario(){
 		
-		String check = PreferenceUtil.getPreferences(Login.this, "f/" + login.trim() + "/" + senha.trim());
+		String check = PreferenceUtil.getPreferences(Login.this, "f/"+login.trim() + "/" + senha.trim());
 		if(check == null){
 			Toast.makeText(Login.this, "Usuário ou Senha Inválidos!", Toast.LENGTH_LONG).show();
 			etSenha.setText("");
 			return false;
+		}
+		
+		if(c1.isChecked()){
+			PreferenceUtil.setPreferences(Login.this, "UsuarioAtivo", login.trim()+ "/" + senha.trim());
+		}else{
+			PreferenceUtil.setPreferences(Login.this, "UsuarioAtivo", "");
 		}
 		
 		return true;
@@ -81,12 +88,6 @@ public class Login extends Activity {
 		
 		if(check == null){
 			return false;
-		}
-		
-		if(c1.isChecked()){
-			PreferenceUtil.setPreferences(Login.this, "UsuarioAtivo", login + "/" + senha);
-		}else{
-			PreferenceUtil.setPreferences(Login.this, "UsuarioAtivo", "");
 		}
 		
 		return true;
