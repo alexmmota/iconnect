@@ -121,7 +121,7 @@ public class Main extends Activity {
 	}
 
 	private void autenticaFacebook() {	
-		if (PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK").equals("")) {
+		if (PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK") == null) {
 			if(isConnected()){
 				flagDialog = true;
 				Intent it = new Intent(Main.this, FacebookAuth.class);
@@ -133,7 +133,7 @@ public class Main extends Activity {
 	}
 
 	private void autenticaTwitter() {
-		if (PreferenceUtil.getPreferences(this, "TOKEN_TWITTER").equals("")) {
+		if (PreferenceUtil.getPreferences(this, "TOKEN_TWITTER") == null) {
 			if(isConnected()){
 				ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
 				configurationBuilder.setOAuthConsumerKey(CONSUMER_KEY);
