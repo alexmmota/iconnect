@@ -57,7 +57,7 @@
                         android:layout_marginTop="2dp"
                         android:background="@drawable/bt3"
                         android:contentDescription="@string/main_act_bt_exit_icon_desc"
-                        android:src="@drawable/exit" />
+                        android:src="@drawable/mais" />
 
                 </LinearLayout>
  

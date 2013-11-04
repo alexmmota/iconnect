@@ -39,7 +39,7 @@
     <string name="log_act_bt_ent">ENTRAR</string>
     <string name="log_act_bt_cad">CADASTRAR</string>
     
-    <string name="main_act_logo_desc">Logotipo</string>
+    <string name="main_act_logo_desc">Logotipo</string> 
     <string name="main_act_face_icon_desc">Facebook Icon</string>
     <string name="main_act_tw_icon_desc">Twitter Icon</string>
     <string name="main_act_mail_icon_desc">Mail Icon</string>
