@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="16" >
-
+        
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="right" >
-
+                    
                     <ImageButton
                         android:id="@+id/btExit"
                         android:layout_width="wrap_content"
@@ -59,6 +59,7 @@
                         android:contentDescription="@string/main_act_bt_exit_icon_desc"
                         android:src="@drawable/mais" />
 
+                    
                 </LinearLayout>
  
             </LinearLayout> 
