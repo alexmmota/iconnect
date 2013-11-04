@@ -1,6 +1,7 @@
 /bin
 /libs
 /project.properties
-/.gitignore
+/.project
+/.classpath
 /README
 /lint.xml
