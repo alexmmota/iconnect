@@ -10,6 +10,7 @@ import twitter4j.conf.ConfigurationBuilder;
 import br.com.Dialog.DialogAjuda;
 import br.com.Dialog.DialogFacebook;
 import br.com.Dialog.DialogMail;
+import br.com.Dialog.DialogMais;
 import br.com.Dialog.DialogTwitter;
 import br.com.util.ClientREST;
 import br.com.util.PreferenceUtil;
@@ -20,9 +21,11 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -43,12 +46,12 @@ public class Main extends Activity {
 	private static RequestToken requestToken;
 	private ImageButton btExit;
 	private LinearLayout btFacebook, btTwitter, btEmail, btAjuda;
-	private boolean flagDialog = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity);
+
 
 		btFacebook = (LinearLayout) findViewById(R.id.btFacebook);
 		btTwitter = (LinearLayout) findViewById(R.id.btTwitter);
@@ -60,8 +63,7 @@ public class Main extends Activity {
 
 		btExit.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				//VERIFICAR USUARIO ATIVO PARA DAR OPÇÃO DE LOGOFF SE NÃO TIVER USUARIO ATIVO, SIMPLESMENTE FECHA
-				finish();
+				new DialogMais(Main.this);
 			}
 		});
 
@@ -108,22 +110,22 @@ public class Main extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if (flagDialog) {
+		if (PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK") != null) {
 			new DialogFacebook(Main.this);
-			flagDialog = false;
 		}
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.login, menu);
-		return true;
+	    // Inflate the menu items for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    //inflater.inflate(R.menu.login, menu);
+	    return super.onCreateOptionsMenu(menu);
 	}
 
 	private void autenticaFacebook() {	
 		if (PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK") == null) {
 			if(isConnected()){
-				flagDialog = true;
 				Intent it = new Intent(Main.this, FacebookAuth.class);
 				startActivity(it);				
 			}
@@ -165,5 +167,10 @@ public class Main extends Activity {
 		.setNeutralButton("Fechar", null)
 		.show();
 		return false;
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    
 	}
 }

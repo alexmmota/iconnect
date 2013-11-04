@@ -57,7 +57,8 @@
             android:layout_margin="4dp"
             android:background="@drawable/et1"
             android:ems="10"
-            android:hint="@string/cad_act_et_pwd_hint2" />
+            android:hint="@string/cad_act_et_pwd_hint2" 
+			android:inputType="textPassword" />
 
     </LinearLayout>
 

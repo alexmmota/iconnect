@@ -61,7 +61,7 @@ public class Login extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.login, menu);
+		//getMenuInflater().inflate(R.menu.login, menu);
 		return true;
 	}
 	
@@ -69,7 +69,7 @@ public class Login extends Activity {
 		
 		String check = PreferenceUtil.getPreferences(Login.this, "f/"+login.trim() + "/" + senha.trim());
 		if(check == null){
-			Toast.makeText(Login.this, "Usu·rio ou Senha Inv·lidos!", Toast.LENGTH_LONG).show();
+			Toast.makeText(Login.this, "Usu√°rio ou Senha Inv√°lidos!", Toast.LENGTH_LONG).show();
 			etSenha.setText("");
 			return false;
 		}
@@ -77,7 +77,7 @@ public class Login extends Activity {
 		if(c1.isChecked()){
 			PreferenceUtil.setPreferences(Login.this, "UsuarioAtivo", login.trim()+ "/" + senha.trim());
 		}else{
-			PreferenceUtil.setPreferences(Login.this, "UsuarioAtivo", "");
+			PreferenceUtil.setPreferences(Login.this, "UsuarioAtivo", null);
 		}
 		
 		return true;

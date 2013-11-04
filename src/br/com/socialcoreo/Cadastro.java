@@ -31,7 +31,7 @@ public class Cadastro extends Activity {
 				if(validaCampos(etUsuario, etSenha, etSenha2)){
 					PreferenceUtil.setPreferences(Cadastro.this, "f/" + etUsuario.getText().toString().trim() + "/" + etSenha.getText().toString().trim(), "");
 					PreferenceUtil.setPreferences(Cadastro.this, "t/" + etUsuario.getText().toString().trim() + "/" + etSenha.getText().toString().trim(), "");
-					Toast.makeText(Cadastro.this, "Usu·rio cadastrado com sucesso.", Toast.LENGTH_LONG).show();
+					Toast.makeText(Cadastro.this, "Usu√°rio cadastrado com sucesso.", Toast.LENGTH_LONG).show();
 					
 					Intent it = new Intent(Cadastro.this, Main.class);
 					startActivity(it);
@@ -50,18 +50,18 @@ public class Cadastro extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.login, menu);
+		//getMenuInflater().inflate(R.menu.login, menu);
 		return true;
 	}
 	
 	public boolean validaCampos(EditText x, EditText y, EditText z){
 		
 		if(x.getText().toString().length() < 4){
-			Toast.makeText(Cadastro.this, "Usu·rio deve ter pelo menos 4 caracteres.", Toast.LENGTH_LONG).show();
+			Toast.makeText(Cadastro.this, "Usu√°rio deve ter pelo menos 4 caracteres.", Toast.LENGTH_LONG).show();
 		}else if(y.getText().toString().length() < 4){
 			Toast.makeText(Cadastro.this, "Senha deve ter pelo menos 4 caracteres.", Toast.LENGTH_LONG).show();
 		}else if(!y.getText().toString().equals(z.getText().toString())){
-			Toast.makeText(Cadastro.this, "As senhas n„o correspondem.", Toast.LENGTH_LONG).show();
+			Toast.makeText(Cadastro.this, "As senhas n√£o correspondem.", Toast.LENGTH_LONG).show();
 			z.setText("");
 		}else{
 			return true;
