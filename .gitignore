@@ -1,0 +1,7 @@
+/bin
+/libs
+/project.properties
+/.settings
+/.classpath
+/README
+/lint.xml
