@@ -127,7 +127,8 @@ public class Main extends Activity {
 		if (PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK") == null) {
 			if(isConnected()){
 				Intent it = new Intent(Main.this, FacebookAuth.class);
-				startActivity(it);				
+				startActivity(it);		
+				overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 			}
 		} else {
 			new DialogFacebook(Main.this);

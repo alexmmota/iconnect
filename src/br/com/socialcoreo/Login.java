@@ -26,6 +26,7 @@ public class Login extends Activity {
 		if(verificarUsuarioAtivo()){
 			Intent it = new Intent(Login.this, Main.class);
 			startActivity(it);
+			overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 			Login.this.finish();
 			finish();
 		}
@@ -45,6 +46,7 @@ public class Login extends Activity {
 				if(validaUsuario()){
 					Intent it = new Intent(Login.this, Main.class);
 					startActivity(it);
+					overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 					finish();
 				}
 			}
@@ -54,6 +56,7 @@ public class Login extends Activity {
 			public void onClick(View v){
 				Intent it = new Intent(Login.this, Cadastro.class);
 				startActivity(it);
+				overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 			}
 		});
 	}
