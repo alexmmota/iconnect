@@ -16,13 +16,17 @@
     <string name="dial_help_title">Ajuda</string>
     
     <string name="dial_face_title">Publicar no Facebook</string>
+    <string name="dial_feed_title">Enviar Feedback</string>
     <string name="dial_face_icon_desc">Facebook Icon</string>
+    <string name="dial_feed_icon_desc">Feedback Icon</string>
     <string name="dial_face_bt_canc">Cancelar</string>
     <string name="dial_face_bt_pub">Publicar</string>
+    <string name="dial_feed_bt_pub">Enviar</string>
     
     <string name="dial_mail_icon_desc">Mail Icon</string>
     <string name="dial_mail_title">Enviar Email</string>
     <string name="dial_mail_et_dest_hint">Destinatário</string>
+    <string name="dial_mail_et_rem_hint">Remetente</string>
     <string name="dial_mail_et_subj_hint">Assunto</string>
     <string name="dial_mail_et_mes_hint">Mensagem</string>
     <string name="dial_mail_bt_canc">Cancelar</string>

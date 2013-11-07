@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ public class Cadastro extends Activity {
 
 	Button btCadastro, btVoltar;
 	EditText etUsuario, etSenha, etSenha2;
+	CheckBox ckManter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +27,21 @@ public class Cadastro extends Activity {
 		etUsuario  = (EditText)findViewById(R.id.etUsuario);
 		etSenha    = (EditText)findViewById(R.id.etSenha);
 		etSenha2   = (EditText)findViewById(R.id.etSenha2);
+		ckManter   = (CheckBox)findViewById(R.id.ckMaterCon);
 		
 		btCadastro.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){
 				if(validaCampos(etUsuario, etSenha, etSenha2)){
 					PreferenceUtil.setPreferences(Cadastro.this, "f/" + etUsuario.getText().toString().trim() + "/" + etSenha.getText().toString().trim(), "");
 					PreferenceUtil.setPreferences(Cadastro.this, "t/" + etUsuario.getText().toString().trim() + "/" + etSenha.getText().toString().trim(), "");
+					PreferenceUtil.setPreferences(Cadastro.this, "USER", etUsuario.getText().toString());
+
+					if(ckManter.isChecked()){
+						PreferenceUtil.setPreferences(Cadastro.this, "UsuarioAtivo", etUsuario.getText().toString()+ "/" + etSenha.getText().toString());
+					}else{
+						PreferenceUtil.setPreferences(Cadastro.this, "UsuarioAtivo", null);
+					}
+					
 					Toast.makeText(Cadastro.this, "Usuário cadastrado com sucesso.", Toast.LENGTH_LONG).show();
 					
 					Intent it = new Intent(Cadastro.this, Main.class);
@@ -49,8 +60,6 @@ public class Cadastro extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.login, menu);
 		return true;
 	}
 	

@@ -15,7 +15,7 @@ public class Login extends Activity {
 
 	Button btLogin, btCadastro;
 	EditText etLogin, etSenha;
-	CheckBox c1;
+	CheckBox ckConectado;
 	String login, senha;
 	
 	@Override
@@ -35,7 +35,7 @@ public class Login extends Activity {
 		btCadastro = (Button)findViewById(R.id.btCadastro);
 		etLogin = (EditText)findViewById(R.id.etLogin);
 		etSenha = (EditText)findViewById(R.id.etSenha);
-		c1 = (CheckBox)findViewById(R.id.checkBox1);
+		ckConectado = (CheckBox)findViewById(R.id.checkBox1);
 		
 		btLogin.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){
@@ -63,8 +63,6 @@ public class Login extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.login, menu);
 		return true;
 	}
 	
@@ -76,8 +74,8 @@ public class Login extends Activity {
 			etSenha.setText("");
 			return false;
 		}
-		
-		if(c1.isChecked()){
+				
+		if(ckConectado.isChecked()){
 			PreferenceUtil.setPreferences(Login.this, "UsuarioAtivo", login.trim()+ "/" + senha.trim());
 		}else{
 			PreferenceUtil.setPreferences(Login.this, "UsuarioAtivo", null);

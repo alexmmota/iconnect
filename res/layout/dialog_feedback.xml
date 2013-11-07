@@ -20,8 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:contentDescription="@string/dial_mail_icon_desc"
-            android:src="@drawable/email2" />
+            android:src="@drawable/feedback" 
+            android:contentDescription="@string/dial_feed_icon_desc"/>
 
         <TextView
             android:id="@+id/textView1"
@@ -30,7 +30,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:text="@string/dial_mail_title"
+            android:text="@string/dial_feed_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#ffffff"
             android:textStyle="bold" />
@@ -44,58 +44,23 @@
         android:orientation="vertical" >
 
         <EditText
-            android:id="@+id/etRemetente"
+            android:id="@+id/etPost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:background="@drawable/et2"
             android:ems="14"
-            android:hint="@string/dial_mail_et_rem_hint"
-            android:maxLength="40" >
-            
-        </EditText>
-        
-        <EditText
-            android:id="@+id/etDestinatario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:background="@drawable/et2"
-            android:ems="14"
-            android:hint="@string/dial_mail_et_dest_hint"
-            android:maxLength="40" >
-                    
-        	<requestFocus />
-        </EditText>
-
-        <EditText
-            android:id="@+id/etAssunto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:background="@drawable/et2"
-            android:ems="14"
-            android:hint="@string/dial_mail_et_subj_hint"
-            android:maxLength="20" />
-
-        <EditText
-            android:id="@+id/etMensagem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:background="@drawable/et2"
-            android:ems="14"
-            android:hint="@string/dial_mail_et_mes_hint"
             android:inputType="textMultiLine"
-            android:maxLength="120"
-            android:minLines="3" />
+            android:maxLength="155"
+            android:minLines="5" >
 
+            <requestFocus />
+        </EditText>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:gravity="right"
             android:weightSum="2" >
 
             <Button
@@ -107,7 +72,7 @@
                 android:layout_marginRight="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/bt2"
-                android:text="@string/dial_mail_bt_canc"
+                android:text="@string/dial_face_bt_canc"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#ffffff" />
 
@@ -120,7 +85,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:background="@drawable/bt2"
-                android:text="@string/dial_mail_bt_env"
+                android:text="@string/dial_feed_bt_pub"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#ffffff" />
 

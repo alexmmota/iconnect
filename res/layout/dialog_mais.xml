@@ -44,6 +44,35 @@
         android:orientation="vertical" >
 
         <LinearLayout
+            android:id="@+id/btFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/et2" >
+
+            <ImageView
+                android:id="@+id/ImageView03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/feedback" />
+
+            <TextView
+                android:id="@+id/TextView03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="Feedback"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#3B5998" />
+        </LinearLayout>
+        
+        
+        <LinearLayout
             android:id="@+id/btLogoff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:src="@drawable/twitter2" />
+                android:src="@drawable/logoff" />
 
             <TextView
                 android:id="@+id/TextView03"

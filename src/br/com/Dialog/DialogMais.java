@@ -1,6 +1,5 @@
 package br.com.Dialog;
 
-import br.com.socialcoreo.Login;
 import br.com.socialcoreo.R;
 import br.com.util.PreferenceUtil;
 import android.annotation.SuppressLint;
@@ -17,7 +16,7 @@ import android.widget.LinearLayout;
 public class DialogMais {
 	
 	Dialog dialog;
-	LinearLayout bt1, bt2, bt3;
+	LinearLayout btDesativaFace, btDesativaTwitter, btLogoff, btFeedback;
 	CheckBox cb1;
 
 	@SuppressLint("SetJavaScriptEnabled")
@@ -28,12 +27,13 @@ public class DialogMais {
 		dialog.setCanceledOnTouchOutside(true);
 		dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 			
-		bt1 = (LinearLayout)dialog.findViewById(R.id.btDesatFacebook);
-		bt2 = (LinearLayout)dialog.findViewById(R.id.btDesatTwitter);
-		bt3 = (LinearLayout)dialog.findViewById(R.id.btLogoff);
+		btDesativaFace = (LinearLayout)dialog.findViewById(R.id.btDesatFacebook);
+		btDesativaTwitter = (LinearLayout)dialog.findViewById(R.id.btDesatTwitter);
+		btLogoff = (LinearLayout)dialog.findViewById(R.id.btLogoff);
+		btFeedback = (LinearLayout) dialog.findViewById(R.id.btFeedback);
 		cb1 = (CheckBox)dialog.findViewById(R.id.checkBox1);
 		
-		bt1.setOnClickListener(new View.OnClickListener(){
+		btDesativaFace.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){
 				new AlertDialog.Builder(c)
 		           .setMessage("Deseja cancelar as publicações no seu Facebook pelo Iconnect?")
@@ -48,7 +48,7 @@ public class DialogMais {
 			}
 		});
 
-		bt2.setOnClickListener(new View.OnClickListener(){
+		btDesativaTwitter.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){
 				new AlertDialog.Builder(c)
 		           .setMessage("Deseja cancelar as publicações no seu Twitter pelo Iconnect?")
@@ -63,7 +63,7 @@ public class DialogMais {
 			}
 		});
 
-		bt3.setOnClickListener(new View.OnClickListener(){
+		btLogoff.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){
 				new AlertDialog.Builder(c)
 		           .setMessage("Deseja mesmo sair?")
@@ -76,6 +76,13 @@ public class DialogMais {
 		           })
 		           .setNegativeButton("Não", null)
 		           .show();
+			}
+		});
+		
+		btFeedback.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new DialogFeedback(c);
 			}
 		});
 		

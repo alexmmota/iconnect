@@ -21,7 +21,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
@@ -62,6 +61,8 @@ public class Main extends Activity {
 		btExit = (ImageButton) findViewById(R.id.btExit);
 
 		Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK"));
+		Log.i("FEEDBACK", "feedback: "+PreferenceUtil.getPreferences(this, "FEEDBACK"));
+		Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(this, "TOKEN_TWITTER"));
 
 		btExit.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -100,7 +101,7 @@ public class Main extends Activity {
 				AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
 				
 				ClientREST.getInstance().callWebServiceTwitter(getApplicationContext(), 
-						accessToken.getToken(), accessToken.getTokenSecret());
+						accessToken.getToken(), accessToken.getTokenSecret(), ""+accessToken.getUserId());
 
 				Log.i("TOKEN_TWITTER", "twitter " + accessToken.getToken());
 				Log.i("TOKEN_TWITTER", "secret " + accessToken.getTokenSecret());
@@ -124,9 +125,7 @@ public class Main extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-	    // Inflate the menu items for use in the action bar
 	    MenuInflater inflater = getMenuInflater();
-	    //inflater.inflate(R.menu.login, menu);
 	    return super.onCreateOptionsMenu(menu);
 	}
 
