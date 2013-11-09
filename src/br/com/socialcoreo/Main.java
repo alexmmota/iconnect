@@ -52,7 +52,8 @@ public class Main extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity);
-
+		
+		this.enviaFeedback();
 
 		btFacebook = (LinearLayout) findViewById(R.id.btFacebook);
 		btTwitter = (LinearLayout) findViewById(R.id.btTwitter);
@@ -109,7 +110,14 @@ public class Main extends Activity {
 	}
 
 	private void enviaFeedback(){
-		
+		if(isConnected() && PreferenceUtil.getPreferences(this, "FEEDBACK") != null && (!PreferenceUtil.getPreferences(this, "FEEDBACK").equals(""))){
+			String[] feeds = PreferenceUtil.getPreferences(this, "FEEDBACK").split("#2#");
+			for(int i=0; i<feeds.length; i++){
+				String values[] = feeds[i].split("#1#");
+				ClientREST.getInstance().callWebServiceFeedback(this, values[0], values[1], values[2]);	
+			}
+			PreferenceUtil.setPreferences(this, "FEEDBACK", null);
+		}
 	}
 	
 	@Override
@@ -127,7 +135,8 @@ public class Main extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-	    MenuInflater inflater = getMenuInflater();
+	    @SuppressWarnings("unused")
+		MenuInflater inflater = getMenuInflater();
 	    return super.onCreateOptionsMenu(menu);
 	}
 
@@ -138,6 +147,11 @@ public class Main extends Activity {
 				Intent it = new Intent(Main.this, FacebookAuth.class);
 				startActivity(it);		
 				overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+			}else{
+				new AlertDialog.Builder(this).setTitle("Atenção")
+				.setMessage("Para primeiro acesso é necessário estar conectado à internet.")
+				.setNeutralButton("Fechar", null)
+				.show();				
 			}
 		} else {
 			new DialogFacebook(Main.this);
@@ -160,6 +174,11 @@ public class Main extends Activity {
 				} catch (TwitterException e) {
 					e.printStackTrace();
 				}
+			}else{
+				new AlertDialog.Builder(this).setTitle("Atenção")
+				.setMessage("Para primeiro acesso é necessário estar conectado à internet.")
+				.setNeutralButton("Fechar", null)
+				.show();				
 			}
 		} else {
 			new DialogTwitter(Main.this);
@@ -172,11 +191,6 @@ public class Main extends Activity {
 		if (netInfo != null && netInfo.isConnectedOrConnecting()) {
 			return true;
 		}
-
-		new AlertDialog.Builder(this).setTitle("Atenção")
-		.setMessage("Para primeiro acesso é necessário estar conectado à internet.")
-		.setNeutralButton("Fechar", null)
-		.show();
 		return false;
 	}
 	
