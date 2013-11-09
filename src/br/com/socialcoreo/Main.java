@@ -60,10 +60,8 @@ public class Main extends Activity {
 		btAjuda = (LinearLayout) findViewById(R.id.btAjuda);
 		btExit = (ImageButton) findViewById(R.id.btExit);
 
-		Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK"));
-		Log.i("FEEDBACK", "feedback: "+PreferenceUtil.getPreferences(this, "FEEDBACK"));
-		Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(this, "TOKEN_TWITTER"));
-
+		
+		
 		btExit.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				new DialogMais(Main.this);
@@ -110,6 +108,10 @@ public class Main extends Activity {
 
 	}
 
+	private void enviaFeedback(){
+		
+	}
+	
 	@Override
 	protected void onResume() {
 		super.onResume();
