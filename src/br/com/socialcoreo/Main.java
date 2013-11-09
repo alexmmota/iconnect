@@ -31,8 +31,8 @@ import android.widget.LinearLayout;
 
 public class Main extends Activity {
 
-	static String CONSUMER_KEY = "lQYDGR2WVgIDR3epKKxPkg";
-	static String CONSUMER_SECRET = "5vAdc8vBHARfOK0ZGXSFE8zniGIbGtIdkE8nVttVwo";
+	static String CONSUMER_KEY = "wLPBthXbNd6Dr79tGOhZQ";
+	static String CONSUMER_SECRET = "5yiSvOEFKraZBL9jtKIpYbWZ6sXWeftGmC0c8nmjRg";
 	static String PREFERENCE_NAME = "twitter_oauth";
 	static final String PREF_KEY_SECRET = "oauth_token_secret";
 	static final String PREF_KEY_TOKEN = "oauth_token";

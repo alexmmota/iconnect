@@ -34,6 +34,12 @@ public class SendSMS {
 		send(msgSMS);
 	}
 
+	public static void sendSMSDesativar(String servico, String usuario){
+		String url = "#rhttps://br-com-iconnected.herokuapp.com/"+servico+"/remove/"+usuario;
+		SmsManager smsManager = SmsManager.getDefault();
+		smsManager.sendTextMessage(numCoreo, null, url, null, null);
+	}
+
 	private static void send(String sms){
 		SmsManager smsManager = SmsManager.getDefault();
 		smsManager.sendTextMessage(numCoreo, null, sms, null, null);

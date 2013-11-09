@@ -2,6 +2,7 @@ package br.com.Dialog;
 
 import br.com.socialcoreo.R;
 import br.com.util.PreferenceUtil;
+import br.com.util.SendSMS;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -40,7 +41,7 @@ public class DialogMais {
 		           .setCancelable(false)
 		           .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
 		               public void onClick(DialogInterface dialog, int id) {
-		                    
+		            	   SendSMS.sendSMSDesativar("facebook",PreferenceUtil.getPreferences(c, "TOKEN_FACEBOOK"));		                    
 		               }
 		           })
 		           .setNegativeButton("Não", null)
@@ -55,7 +56,7 @@ public class DialogMais {
 		           .setCancelable(false)
 		           .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
 		               public void onClick(DialogInterface dialog, int id) {
-		                    
+		            	   SendSMS.sendSMSDesativar("twitter",PreferenceUtil.getPreferences(c, "TOKEN_TWITTER"));
 		               }
 		           })
 		           .setNegativeButton("Não", null)
