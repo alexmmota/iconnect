@@ -191,14 +191,13 @@ public class Main extends Activity {
 		if (netInfo != null && netInfo.isConnectedOrConnecting()) {
 			return true;
 		}
-<<<<<<< HEAD
+
 
 		new AlertDialog.Builder(this).setTitle("Atenção")
 		.setMessage(getResources().getString(R.string.main_act_mess))
 		.setNeutralButton("Fechar", null)
 		.show();
-=======
->>>>>>> b895ce5c40f96fd154717934169a5e3f0a3dfaa1
+
 		return false;
 	}
 	
