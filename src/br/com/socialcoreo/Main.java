@@ -174,7 +174,7 @@ public class Main extends Activity {
 		}
 
 		new AlertDialog.Builder(this).setTitle("Atenção")
-		.setMessage("Para primeiro acesso é necessário estar conectado à internet.")
+		.setMessage(getResources().getString(R.string.main_act_mess))
 		.setNeutralButton("Fechar", null)
 		.show();
 		return false;

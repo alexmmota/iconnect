@@ -1,5 +1,6 @@
 package br.com.util;
 
+import br.com.socialcoreo.R;
 import android.content.Context;
 import android.telephony.SmsManager;
 import android.widget.Toast;
@@ -16,7 +17,7 @@ public class SendSMS {
 	public static boolean sendSMSEmail(String to, String fromName, String subject, String text, Context c){		
 		String[] toAux = to.split("@");
 		if(toAux.length < 2){
-			Toast.makeText(c, "Informe um email valido para o destinatário", Toast.LENGTH_SHORT).show();
+			Toast.makeText(c, c.getResources().getString(R.string.dial_mail_email_inc), Toast.LENGTH_SHORT).show();
 			return false;
 		}else{
 			String toUser = toAux[0];

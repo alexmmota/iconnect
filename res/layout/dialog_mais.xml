@@ -30,7 +30,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="5dp"
-            android:text="Opções:"
+            android:text="@string/dial_mais_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#ffffff"
             android:textStyle="bold" />
@@ -58,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:contentDescription="@string/dial_mais_feed_desc"
                 android:src="@drawable/feedback" />
 
             <TextView
@@ -66,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
-                android:text="Feedback"
+                android:text="@string/dial_mais_feed"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#3B5998" />
         </LinearLayout>
@@ -83,19 +84,20 @@
             android:background="@drawable/et2" >
 
             <ImageView
-                android:id="@+id/ImageView03"
+                android:id="@+id/ImageView04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:contentDescription="@string/dial_mais_logoff_desc"
                 android:src="@drawable/logoff" />
 
             <TextView
-                android:id="@+id/TextView03"
+                android:id="@+id/TextView04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
-                android:text="Fazer Logoff"
+                android:text="@string/dial_mais_logoff"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#3B5998" />
         </LinearLayout>
@@ -112,6 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:contentDescription="@string/dial_mais_des_face_desc"
                 android:src="@drawable/facebook2" />
 
             <TextView
@@ -120,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
-                android:text="Desativar Facebook"
+                android:text="@string/dial_mais_des_face"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#3B5998" />
 
@@ -141,6 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:contentDescription="@string/dial_mais_des_twt_desc"
                 android:src="@drawable/twitter2" />
 
             <TextView
@@ -149,7 +153,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
-                android:text="Desativar Twitter"
+                android:text="@string/dial_mais_des_twt"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#3B5998" />
 

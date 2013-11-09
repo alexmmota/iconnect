@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IConnect</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="app_id">597582926970321</string>
+    
+    <string name="cad_act_et_usr_hint">Username</string>
+    <string name="cad_act_et_pwd_hint">Password</string>
+    <string name="cad_act_et_pwd_hint2">Repeat Password</string>
+    <string name="cad_act_bt_cad">SIGN UP</string>
+    <string name="cad_act_bt_voltar">BACK</string>
+    <string name="cad_act_logo_desc">Logotipo</string>
+    
+    <string name="dial_help_title">Help</string>
+    
+    <string name="dial_face_title">Publish to Facebook</string>
+    <string name="dial_feed_title">Send Feedback</string>
+    <string name="dial_face_icon_desc">Facebook Icon</string>
+    <string name="dial_feed_icon_desc">Feedback Icon</string>
+    <string name="dial_face_bt_canc">Cancel</string>
+    <string name="dial_face_bt_pub">Publish</string>
+    <string name="dial_feed_bt_pub">Send</string>
+    
+    <string name="dial_mail_icon_desc">Mail Icon</string>
+    <string name="dial_mail_title">Send Email</string>
+    <string name="dial_mail_et_dest_hint">Addressee</string>
+    <string name="dial_mail_et_rem_hint">Sender</string>
+    <string name="dial_mail_et_subj_hint">Subject</string>
+    <string name="dial_mail_et_mes_hint">Message</string>
+    <string name="dial_mail_bt_canc">Cancel</string>
+    <string name="dial_mail_bt_env">Send</string>
+    <string name="dial_mail_email_inc">Invalid Email address!</string>
+    
+    <string name="dial_tw_title">Publish to Twitter</string>
+    <string name="dial_tw_icon_desc">Twitter Icon</string>
+    <string name="dial_tw_bt_canc">Cancel</string>
+    <string name="dial_tw_bt_pub">Publish</string>
+    
+    <string name="log_act_logo_desc">Logotipo</string>
+    <string name="log_act_et_usr_hint">Username</string>
+    <string name="log_act_et_pwd_hint">Password</string>
+    <string name="log_act_bt_ent">SIGN IN</string>
+    <string name="log_act_bt_cad">SIGN UP</string>
+    <string name="log_act_cb_man_con">Stay Connected</string>
+    
+    <string name="main_act_logo_desc">Logotipo</string> 
+    <string name="main_act_face_icon_desc">Facebook Icon</string>
+    <string name="main_act_tw_icon_desc">Twitter Icon</string>
+    <string name="main_act_mail_icon_desc">Mail Icon</string>
+    <string name="main_act_help_icon_desc">Help Icon</string>
+    <string name="main_act_bt_exit_icon_desc">Exit Icon</string>
+    <string name="main_act_bt_face_title">Facebook</string>
+    <string name="main_act_bt_tw_title">Twitter</string>
+    <string name="main_act_bt_mail_title">Email</string>
+    <string name="main_act_bt_help_title">Help</string>
+    
+    <string name="face_auth_face_icon_desc">Facebook Icon</string>
+    <string name="face_auth_title">Activate</string>
+    
+    <string name="cad_act_cb_man_con">Stay Connected</string>
+    
+    <string name="dial_mais_feed">Feedback</string>
+    <string name="dial_mais_logoff">Logoff</string>
+    <string name="dial_mais_des_face">Disable Facebook</string>
+    <string name="dial_mais_des_twt">Disable Twitter</string>
+    <string name="dial_mais_feed_desc">Feedback Icon</string>
+    <string name="dial_mais_logoff_desc">Logoff Icon</string>
+    <string name="dial_mais_des_face_desc">Facebook Icon</string>
+    <string name="dial_mais_des_twt_desc">Twitter Icon</string>
+    <string name="dial_mais_title">Options:</string>
+    <string name="dial_mais_desat_face">Do you want Iconnect to stop posting on your Facebook wall?</string>
+    <string name="dial_mais_desat_twt">Do you want Iconnect to stop posting on your Twitter?</string>
+    <string name="dial_mais_logoff_message">Do you really want to leave?</string>
+    
+    <string name="html_help_file">file:///android_asset/help-en.html</string>
+    <string name="html_face_file">file:///android_asset/facebook-en.html</string>
+    
+    <string name="resp_positiva">Yes</string>
+	<string name="resp_negativa">No</string>
+    
+	<string name="cad_act_mess1">Username must have at least 4 characters.</string>
+    <string name="cad_act_mess2">Password must have at least 4 characters.</string>
+    <string name="cad_act_mess3">Passwords do not match.</string>
+    
+    <string name="log_act_mess">Invalid user or password.</string>
+    
+    <string name="main_act_mess">On first access is necessary to be connected to the internet.</string>
+    
+</resources>
