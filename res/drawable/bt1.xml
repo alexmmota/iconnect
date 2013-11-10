@@ -9,6 +9,8 @@
                 android:angle="270" />
             
             <stroke android:width="1dp" android:color="#ffffff" />
+            
+            <corners android:radius="6dp"/>
 
             <padding android:bottom="9dp" android:left="5dp" android:right="5dp" android:top="9dp" />
 
@@ -20,6 +22,8 @@
             <gradient android:angle="270" android:endColor="#00000000" android:startColor="#00000000" />
 
             <stroke android:width="1dp" android:color="#ffffff" />
+            
+            <corners android:radius="6dp"/>
 
             <padding android:bottom="9dp" android:left="5dp" android:right="5dp" android:top="9dp" />
         </shape>

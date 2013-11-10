@@ -3,7 +3,6 @@
 
     <string name="app_name">IConnect</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="app_id">597582926970321</string>
     
     <string name="cad_act_et_usr_hint">Username</string>
@@ -79,6 +78,8 @@
     
     <string name="resp_positiva">Yes</string>
 	<string name="resp_negativa">No</string>
+	<string name="bt_fechar">Close</string>
+	<string name="alert_dialog_title">Attention</string>
 
 	<string name="cad_act_mess1">Username must have at least 4 characters.</string>
     <string name="cad_act_mess2">Password must have at least 4 characters.</string>
@@ -88,5 +89,6 @@
     
     <string name="main_act_mess">On first access is necessary to be connected to the internet.</string>
 
+    <string name="dial_feed_mess">The text field is empty.</string>
     
 </resources>

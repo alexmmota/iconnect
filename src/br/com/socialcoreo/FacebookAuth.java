@@ -127,8 +127,7 @@ public class FacebookAuth extends Activity {
 
 	public void disconnect() {
 		Session.getActiveSession().closeAndClearTokenInformation();
-		// PreferenceUtil.setPreferences(FacebookAuth.this, "TOKEN_FACEBOOK",
-		// "");
+		
 		String user = PreferenceUtil.getPreferences(FacebookAuth.this, "USER");
 		PreferenceUtil.setPreferences(FacebookAuth.this, user
 				+ "TOKEN_FACEBOOK", "");

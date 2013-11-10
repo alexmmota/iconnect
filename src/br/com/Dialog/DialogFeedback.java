@@ -66,7 +66,7 @@ public class DialogFeedback {
 					}
 					dialog.cancel();					
 				}else{
-					Toast.makeText(c, "Dê seu feedback", Toast.LENGTH_SHORT).show();
+					Toast.makeText(c, c.getResources().getString(R.string.dial_feed_mess), Toast.LENGTH_SHORT).show();
 				}					
 			}
 		});

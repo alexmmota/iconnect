@@ -37,14 +37,14 @@ public class DialogMais {
 		btDesativaFace.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){
 				new AlertDialog.Builder(c)
-		           .setMessage("Deseja cancelar as publicações no seu Facebook pelo Iconnect?")
+		           .setMessage(c.getResources().getString(R.string.dial_mais_desat_face))
 		           .setCancelable(false)
-		           .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+		           .setPositiveButton(c.getResources().getString(R.string.resp_positiva), new DialogInterface.OnClickListener() {
 		               public void onClick(DialogInterface dialog, int id) {
 		            	   SendSMS.sendSMSDesativar("facebook",PreferenceUtil.getPreferences(c, "TOKEN_FACEBOOK"));		                    
 		               }
 		           })
-		           .setNegativeButton("Não", null)
+		           .setNegativeButton(c.getResources().getString(R.string.resp_negativa), null)
 		           .show();
 			}
 		});
@@ -52,14 +52,14 @@ public class DialogMais {
 		btDesativaTwitter.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){
 				new AlertDialog.Builder(c)
-		           .setMessage("Deseja cancelar as publicações no seu Twitter pelo Iconnect?")
+		           .setMessage(c.getResources().getString(R.string.dial_mais_desat_twt))
 		           .setCancelable(false)
-		           .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+		           .setPositiveButton(c.getResources().getString(R.string.resp_positiva), new DialogInterface.OnClickListener() {
 		               public void onClick(DialogInterface dialog, int id) {
 		            	   SendSMS.sendSMSDesativar("twitter",PreferenceUtil.getPreferences(c, "TOKEN_TWITTER"));
 		               }
 		           })
-		           .setNegativeButton("Não", null)
+		           .setNegativeButton(c.getResources().getString(R.string.resp_negativa), null)
 		           .show();
 			}
 		});
@@ -67,15 +67,15 @@ public class DialogMais {
 		btLogoff.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){
 				new AlertDialog.Builder(c)
-		           .setMessage("Deseja mesmo sair?")
+		           .setMessage(c.getResources().getString(R.string.dial_mais_logoff))
 		           .setCancelable(false)
-		           .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+		           .setPositiveButton(c.getResources().getString(R.string.resp_positiva), new DialogInterface.OnClickListener() {
 		               public void onClick(DialogInterface dialog, int id) {
 		            	   	PreferenceUtil.setPreferences(c, "UsuarioAtivo", null);
 		                    ((Activity)c).finish();
 		               }
 		           })
-		           .setNegativeButton("Não", null)
+		           .setNegativeButton(c.getResources().getString(R.string.resp_negativa), null)
 		           .show();
 			}
 		});

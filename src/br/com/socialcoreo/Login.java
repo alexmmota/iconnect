@@ -31,6 +31,15 @@ public class Login extends Activity {
 			finish();
 		}
 		
+		if(verificarPrimeiroAcesso()){
+			PreferenceUtil.setPreferences(Login.this, "PrimeiroAcesso", "");
+			Intent it = new Intent(Login.this, Cadastro.class);
+			startActivity(it);
+			overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+			Login.this.finish();
+			finish();
+		}
+		
 		btLogin = (Button)findViewById(R.id.btLogin);
 		btCadastro = (Button)findViewById(R.id.btCadastro);
 		etLogin = (EditText)findViewById(R.id.etLogin);
@@ -96,6 +105,16 @@ public class Login extends Activity {
 		}
 		
 		return true;
+	}
+	
+	public boolean verificarPrimeiroAcesso(){
+		String check = PreferenceUtil.getPreferences(Login.this, "PrimeiroAcesso");
+		
+		if(check == null){
+			return true;
+		}
+		
+		return false;
 	}
 	
 }

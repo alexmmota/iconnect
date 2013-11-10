@@ -149,9 +149,9 @@ public class Main extends Activity {
 				Intent it = new Intent(Main.this, FacebookAuth.class);
 				startActivity(it);
 			}else{
-				new AlertDialog.Builder(this).setTitle("Atenção")
+				new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.alert_dialog_title))
 				.setMessage(getResources().getString(R.string.main_act_mess))
-				.setNeutralButton("Fechar", null)
+				.setNeutralButton(getResources().getString(R.string.bt_fechar), null)
 				.show();				
 			}
 		} else {
@@ -180,9 +180,9 @@ public class Main extends Activity {
 					}
 				}).start();
 			}else{
-				new AlertDialog.Builder(this).setTitle("Atenção")
+				new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.alert_dialog_title))
 				.setMessage(getResources().getString(R.string.main_act_mess))
-				.setNeutralButton("Fechar", null)
+				.setNeutralButton(getResources().getString(R.string.bt_fechar), null)
 				.show();		
 			}
 		} else {
