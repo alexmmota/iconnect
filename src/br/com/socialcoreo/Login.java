@@ -60,6 +60,7 @@ public class Login extends Activity {
 				Intent it = new Intent(Login.this, Cadastro.class);
 				startActivity(it);
 				overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+				finish();
 			}
 		});
 	}

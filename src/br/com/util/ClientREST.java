@@ -14,6 +14,8 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+
+import br.com.socialcoreo.Main;
 import android.content.Context;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -35,6 +37,7 @@ public class ClientREST {
 
 	public void callWebServiceFace(final Context c, final String accessToken, final String user){
 		final String telefone = getPhone(c);
+		final String currentUser = PreferenceUtil.getPreferences(c, "USER");
 
 		new Thread(new Runnable() {			
 			@Override
@@ -54,7 +57,7 @@ public class ClientREST {
 		            
 				    String res = br.readLine();
 				    Log.i("TESTE","token_face: "+res);
-					PreferenceUtil.setPreferences(c, "TOKEN_FACEBOOK", res);
+					PreferenceUtil.setPreferences(c, currentUser+"TOKEN_FACEBOOK", res);
         			Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(c, "TOKEN_FACEBOOK"));
 
 				} catch (MalformedURLException e1) {
@@ -98,6 +101,8 @@ public class ClientREST {
 				try {
 					HttpClient httpclient = new DefaultHttpClient();
 			    	HttpPost post = new HttpPost(URL_REST_TWITTER);
+
+					final String currentUser = PreferenceUtil.getPreferences(c, "USER");
 					
 					List<NameValuePair> parametros = new ArrayList<NameValuePair>();
 					parametros.add(new BasicNameValuePair("accessToken", accessToken));
@@ -111,7 +116,7 @@ public class ClientREST {
 		            
 				    String res = br.readLine();
 				    Log.i("TESTE","token_face: "+res);
-					PreferenceUtil.setPreferences(c, "TOKEN_TWITTER", res);
+					PreferenceUtil.setPreferences(c, currentUser+"TOKEN_TWITTER", res);
         			Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(c, "TOKEN_TWITTER"));
 				} catch (Exception e) {
 					e.printStackTrace();

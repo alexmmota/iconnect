@@ -41,6 +41,7 @@ public class Main extends Activity {
 	static final String IEXTRA_OAUTH_VERIFIER = "oauth_verifier";
 	static final String IEXTRA_OAUTH_TOKEN = "oauth_token";
 
+	private String user;
 	private boolean flagFacebook = false;
 	private boolean flagTwitter;
 	private static Twitter twitter;
@@ -61,7 +62,7 @@ public class Main extends Activity {
 		btAjuda = (LinearLayout) findViewById(R.id.btAjuda);
 		btExit = (ImageButton) findViewById(R.id.btExit);
 
-		
+		user = PreferenceUtil.getPreferences(Main.this, "USER");
 		
 		btExit.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -123,11 +124,11 @@ public class Main extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if ((PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK") != null)&&(flagFacebook)) {
+		if ((PreferenceUtil.getPreferences(this, user+"TOKEN_FACEBOOK") != null)&&(flagFacebook)) {
 			flagFacebook = false;
 			new DialogFacebook(Main.this);
 		}
-		if ((PreferenceUtil.getPreferences(this, "TOKEN_TWITTER") != null)&&(flagTwitter)) {
+		if ((PreferenceUtil.getPreferences(this, user+"TOKEN_TWITTER") != null)&&(flagTwitter)) {
 			flagTwitter = false;
 			new DialogTwitter(Main.this);
 		}
@@ -141,7 +142,7 @@ public class Main extends Activity {
 	}
 
 	private void autenticaFacebook() {
-		if (PreferenceUtil.getPreferences(this, "TOKEN_FACEBOOK") == null) {
+		if (PreferenceUtil.getPreferences(this, user+"TOKEN_FACEBOOK") == null) {
 			if(isConnected()){
 				flagFacebook = true;
 				Intent it = new Intent(Main.this, FacebookAuth.class);
@@ -159,7 +160,7 @@ public class Main extends Activity {
 	}
 
 	private void autenticaTwitter() {
-		if (PreferenceUtil.getPreferences(this, "TOKEN_TWITTER") == null) {
+		if (PreferenceUtil.getPreferences(this, user+"TOKEN_TWITTER") == null) {
 			if(isConnected()){
 				flagTwitter = true;
 				ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();

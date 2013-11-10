@@ -9,7 +9,8 @@ public class SendSMS {
 	private static String numCoreo = "3497980287";
 
 	public static void sendSMSFacebook(String text, Context c){
-		String token = PreferenceUtil.getPreferences(c, "TOKEN_FACEBOOK");
+		String currentUser = PreferenceUtil.getPreferences(c, "USER");
+		String token = PreferenceUtil.getPreferences(c, currentUser+"TOKEN_FACEBOOK");
 		String msgSMS = "#f"+token+text;
 		send(msgSMS);
 	}
@@ -30,7 +31,8 @@ public class SendSMS {
 	}
 	
 	public static void sendSMSTwitter(String text, Context c){
-		String token = PreferenceUtil.getPreferences(c, "TOKEN_TWITTER");		
+		String currentUser = PreferenceUtil.getPreferences(c, "USER");
+		String token = PreferenceUtil.getPreferences(c, currentUser+"TOKEN_TWITTER");		
 		String msgSMS = "#t"+token+text;
 		send(msgSMS);
 	}

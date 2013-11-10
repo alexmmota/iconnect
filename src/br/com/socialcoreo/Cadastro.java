@@ -45,6 +45,7 @@ public class Cadastro extends Activity {
 					
 					Intent it = new Intent(Cadastro.this, Main.class);
 					startActivity(it);
+					
 					finish();
 				}
 			}
@@ -52,6 +53,9 @@ public class Cadastro extends Activity {
 		
 		btVoltar.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){
+				Intent it = new Intent(Cadastro.this, Login.class);
+				startActivity(it);
+				
 				finish();
 			}
 		});
