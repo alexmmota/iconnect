@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="Manter Conectado" />
+            android:text="@string/log_act_cb_man_con" />
 
     </LinearLayout>
 

@@ -9,6 +9,7 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
+
 import br.com.socialcoreo.R;
 import br.com.util.ClientREST;
 import br.com.util.PreferenceUtil;
@@ -28,8 +29,11 @@ public class FacebookAuth extends Activity {
 		setContentView(R.layout.facebook_auth);
 		uiHelper = new UiLifecycleHelper(this, callback);
 		uiHelper.onCreate(savedInstanceState);
+		
+		String url = getResources().getString(R.string.html_face_file);
+		
 		wb1 = (WebView)findViewById(R.id.webView1);
-		wb1.loadUrl("file:///android_asset/facebook.html");
+		wb1.loadUrl(url);
 		
 		LoginButton authButton = (LoginButton) findViewById(R.id.authButton);
 		authButton.setPublishPermissions(Arrays.asList("publish_actions", "publish_stream"));

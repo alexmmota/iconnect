@@ -20,8 +20,10 @@ public class DialogAjuda {
 		dialog.setCanceledOnTouchOutside(true);
 		dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 		
+		String url = c.getResources().getString(R.string.html_help_file);
+		
 		webView = (WebView) dialog.findViewById(R.id.webView1);
-		webView.loadUrl("file:///android_asset/help.html");
+		webView.loadUrl(url);
 		
 		dialog.show();
 	}
