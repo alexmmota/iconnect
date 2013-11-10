@@ -32,31 +32,39 @@ public class ClientREST {
 		return clientREST;
 	}
 
-	public void callWebServiceFace(final Context c, final String accessToken, final String user){
+	public void callWebServiceFace(final Context c, final String accessToken,
+			final String user) {
 		final String telefone = getPhone(c);
 		final String currentUser = PreferenceUtil.getPreferences(c, "USER");
 
-		new Thread(new Runnable() {	
+		new Thread(new Runnable() {
 			@Override
 			public void run() {
 				try {
 					HttpClient httpclient = new DefaultHttpClient();
-			    	HttpPost post = new HttpPost(URL_REST_FACE);
-					
+					HttpPost post = new HttpPost(URL_REST_FACE);
+
 					List<NameValuePair> parametros = new ArrayList<NameValuePair>();
-					parametros.add(new BasicNameValuePair("token", accessToken));
+					parametros
+							.add(new BasicNameValuePair("token", accessToken));
 					parametros.add(new BasicNameValuePair("userid", user));
 					parametros.add(new BasicNameValuePair("phone", telefone));
 					post.setEntity(new UrlEncodedFormEntity(parametros));
-					
+
 					HttpResponse response = httpclient.execute(post);
-					BufferedReader br = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-		            
-				    String res = br.readLine();
-				    Log.i("TESTE","token_face: "+res);
-					PreferenceUtil.setPreferences(c, currentUser+"TOKEN_FACEBOOK", res);
-        			Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(c, currentUser+"TOKEN_FACEBOOK"));
-        			Log.i("CHAVE", currentUser+"TOKEN_FACEBOOK");
+					BufferedReader br = new BufferedReader(
+							new InputStreamReader(response.getEntity()
+									.getContent()));
+
+					String res = br.readLine();
+					Log.i("TESTE", "token_face: " + res);
+					PreferenceUtil.setPreferences(c, currentUser
+							+ "TOKEN_FACEBOOK", res);
+					Log.i("TESTE",
+							"token: "
+									+ PreferenceUtil.getPreferences(c,
+											currentUser + "TOKEN_FACEBOOK"));
+					Log.i("CHAVE", currentUser + "TOKEN_FACEBOOK");
 
 				} catch (MalformedURLException e1) {
 					e1.printStackTrace();
@@ -67,14 +75,15 @@ public class ClientREST {
 		}).start();
 	}
 
-	public void callWebServiceFeedback(final Context c, final String user, final String text, final String data){
-		new Thread(new Runnable() {			
+	public void callWebServiceFeedback(final Context c, final String user,
+			final String text, final String data) {
+		new Thread(new Runnable() {
 			@Override
 			public void run() {
 				try {
 					HttpClient httpclient = new DefaultHttpClient();
-			    	HttpPost post = new HttpPost(URL_REST_FEEDBACK);
-					
+					HttpPost post = new HttpPost(URL_REST_FEEDBACK);
+
 					List<NameValuePair> parametros = new ArrayList<NameValuePair>();
 					parametros.add(new BasicNameValuePair("user", user));
 					parametros.add(new BasicNameValuePair("message", text));
@@ -90,37 +99,39 @@ public class ClientREST {
 			}
 		}).start();
 	}
-	
-	public void callWebServiceTwitter(final Context c, final String accessToken, final String secretToken, final String user) {
-		final String telefone = getPhone(c);
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					HttpClient httpclient = new DefaultHttpClient();
-			    	HttpPost post = new HttpPost(URL_REST_TWITTER);
 
-					final String currentUser = PreferenceUtil.getPreferences(c, "USER");
-					
-					List<NameValuePair> parametros = new ArrayList<NameValuePair>();
-					parametros.add(new BasicNameValuePair("accessToken", accessToken));
-					parametros.add(new BasicNameValuePair("secretToken", secretToken));
-					parametros.add(new BasicNameValuePair("userId", user));
-					parametros.add(new BasicNameValuePair("phone", telefone));
-					post.setEntity(new UrlEncodedFormEntity(parametros));
-					
-					HttpResponse response = httpclient.execute(post);
-					BufferedReader br = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-		            
-				    String res = br.readLine();
-				    Log.i("TESTE","token_face: "+res);
-					PreferenceUtil.setPreferences(c, currentUser+"TOKEN_TWITTER", res);
-        			Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(c, currentUser+"TOKEN_TWITTER"));
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}).start();
+	public void callWebServiceTwitter(final Context c,
+			final String accessToken, final String secretToken,
+			final String user) {
+		final String telefone = getPhone(c);
+		try {
+			HttpClient httpclient = new DefaultHttpClient();
+			HttpPost post = new HttpPost(URL_REST_TWITTER);
+
+			final String currentUser = PreferenceUtil.getPreferences(c, "USER");
+
+			List<NameValuePair> parametros = new ArrayList<NameValuePair>();
+			parametros.add(new BasicNameValuePair("accessToken", accessToken));
+			parametros.add(new BasicNameValuePair("secretToken", secretToken));
+			parametros.add(new BasicNameValuePair("userId", user));
+			parametros.add(new BasicNameValuePair("phone", telefone));
+			post.setEntity(new UrlEncodedFormEntity(parametros));
+
+			HttpResponse response = httpclient.execute(post);
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					response.getEntity().getContent()));
+
+			String res = br.readLine();
+			Log.i("TESTE", "token_face: " + res);
+			PreferenceUtil
+					.setPreferences(c, currentUser + "TOKEN_TWITTER", res);
+			Log.i("TESTE",
+					"token: "
+							+ PreferenceUtil.getPreferences(c, currentUser
+									+ "TOKEN_TWITTER"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	private String getPhone(Context c) {

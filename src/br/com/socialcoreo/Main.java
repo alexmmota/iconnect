@@ -98,17 +98,26 @@ public class Main extends Activity {
 
 		Uri uri = getIntent().getData();
 		if (uri != null && uri.toString().startsWith(CALLBACK_URL)) {
-			String verifier = uri.getQueryParameter(IEXTRA_OAUTH_VERIFIER);
+			final String verifier = uri.getQueryParameter(IEXTRA_OAUTH_VERIFIER);
 			try {
 				IConnectUtil.flagTwitter = true;
-				AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
-				
-				ClientREST.getInstance().callWebServiceTwitter(getApplicationContext(), 
-						accessToken.getToken(), accessToken.getTokenSecret(), ""+accessToken.getUserId());
-
-				Log.i("TOKEN_TWITTER", "twitter " + accessToken.getToken());
-				Log.i("TOKEN_TWITTER", "secret " + accessToken.getTokenSecret());
-			} catch (Exception e) {}
+				new Thread(new Runnable() {
+					@Override
+					public void run() {
+						AccessToken accessToken;
+						try {
+							accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
+							ClientREST.getInstance().callWebServiceTwitter(getApplicationContext(), accessToken.getToken(), accessToken.getTokenSecret(), ""+accessToken.getUserId());						
+							Log.i("TOKEN_TWITTER", "twitter " + accessToken.getToken());
+							Log.i("TOKEN_TWITTER", "secret " + accessToken.getTokenSecret());
+						} catch (TwitterException e) {
+							e.printStackTrace();
+						}
+					}
+				}).start();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 
 	}
@@ -191,7 +200,7 @@ public class Main extends Activity {
 		}
 		if(IConnectUtil.flagTwitter){
 			new CallDialogFacebook().execute("TWITTER");
-		}		
+		}
 	}
 
 	@Override
