@@ -28,7 +28,6 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 public class Main extends Activity {
 
@@ -169,12 +168,16 @@ public class Main extends Activity {
 				Configuration configuration = configurationBuilder.build();
 				twitter = new TwitterFactory(configuration).getInstance();
 		
-				try {
-					requestToken = twitter.getOAuthRequestToken(CALLBACK_URL);
-					this.startActivityForResult(new Intent(Intent.ACTION_VIEW, Uri.parse(requestToken.getAuthenticationURL())), 1);
-				} catch (TwitterException e) {
-					e.printStackTrace();
-				}
+				new Thread(new Runnable() {
+					public void run() {
+						try {
+							requestToken = twitter.getOAuthRequestToken(CALLBACK_URL);
+							startActivityForResult(new Intent(Intent.ACTION_VIEW, Uri.parse(requestToken.getAuthenticationURL())), 1);							
+						} catch (TwitterException e) {
+							e.printStackTrace();
+						}						
+					}
+				}).start();
 			}else{
 				new AlertDialog.Builder(this).setTitle("Atenção")
 				.setMessage(getResources().getString(R.string.main_act_mess))
