@@ -135,7 +135,7 @@ public class Main extends Activity {
 		    	
 		    	if(params[0].equals("FACEBOOK")){
 					while((PreferenceUtil.getPreferences(Main.this, user+"TOKEN_FACEBOOK") == null)){
-						if(cont < 7){
+						if(cont < 20){
 							try {
 								Thread.sleep(1000);
 							} catch (InterruptedException e) {
@@ -148,7 +148,7 @@ public class Main extends Activity {
 					}
 		    	}else if(params[0].equals("TWITTER")){
 					while((PreferenceUtil.getPreferences(Main.this, user+"TOKEN_TWITTER") == null)){
-						if(cont < 7){
+						if(cont < 20){
 							try {
 								Thread.sleep(1000);
 							} catch (InterruptedException e) {
