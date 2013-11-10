@@ -88,6 +88,8 @@
     <string name="log_act_mess">Usuário ou senha inválidos.</string>
     
     <string name="main_act_mess">Para primeiro acesso é necessário estar conectado à internet.</string>
+
+    <string name="main_act_face_dialog">Aguarde...</string>
     
     <string name="dial_feed_mess">O campo de texto está vazio.</string>
     

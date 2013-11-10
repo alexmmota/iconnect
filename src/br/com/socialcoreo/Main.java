@@ -17,9 +17,11 @@ import br.com.util.PreferenceUtil;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -48,6 +50,7 @@ public class Main extends Activity {
 	private static RequestToken requestToken;
 	private ImageButton btExit;
 	private LinearLayout btFacebook, btTwitter, btEmail, btAjuda;
+	private ProgressDialog pbFacebbok;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -124,10 +127,38 @@ public class Main extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if ((PreferenceUtil.getPreferences(this, user+"TOKEN_FACEBOOK") != null)&&(flagFacebook)) {
-			flagFacebook = false;
-			new DialogFacebook(Main.this);
+		
+		class CallDialogFacebook extends AsyncTask<String, Void, Boolean>{
+		    @Override
+		    protected Boolean doInBackground(String... params) {
+				while((PreferenceUtil.getPreferences(Main.this, user+"TOKEN_FACEBOOK") == null)){
+				}
+				return true;
+		    }
+
+		    @Override
+		    protected void onPreExecute(){
+		        super.onPreExecute();
+		        pbFacebbok = new ProgressDialog(Main.this);
+		        pbFacebbok.setIndeterminate(true);
+		        pbFacebbok.setMessage(getResources().getString(R.string.main_act_face_dialog));
+		        pbFacebbok.show();
+		    }
+
+		    @Override
+		    protected void onPostExecute(Boolean result){
+		        super.onPostExecute(result);
+		        pbFacebbok.dismiss();
+		        if(result){
+					flagFacebook = false;
+					autenticaFacebook();
+		        } 
+		    }
 		}
+		if(flagFacebook){
+			new CallDialogFacebook().execute();			
+		}
+		
 		if ((PreferenceUtil.getPreferences(this, user+"TOKEN_TWITTER") != null)&&(flagTwitter)) {
 			flagTwitter = false;
 			new DialogTwitter(Main.this);

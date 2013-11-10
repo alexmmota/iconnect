@@ -88,7 +88,9 @@
     <string name="log_act_mess">Invalid user or password.</string>
     
     <string name="main_act_mess">On first access is necessary to be connected to the internet.</string>
-
+    
+    <string name="main_act_face_dialog">Please Wait...</string>
+    
     <string name="dial_feed_mess">The text field is empty.</string>
     
 </resources>
