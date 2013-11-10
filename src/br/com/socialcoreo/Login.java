@@ -44,6 +44,9 @@ public class Login extends Activity {
 				senha = etSenha.getText().toString();
 				
 				if(validaUsuario()){
+					
+					PreferenceUtil.setPreferences(Login.this, "USER", etLogin.getText().toString());
+					
 					Intent it = new Intent(Login.this, Main.class);
 					startActivity(it);
 					overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);

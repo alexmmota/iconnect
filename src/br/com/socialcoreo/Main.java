@@ -28,6 +28,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class Main extends Activity {
 
@@ -41,7 +42,7 @@ public class Main extends Activity {
 	static final String IEXTRA_OAUTH_VERIFIER = "oauth_verifier";
 	static final String IEXTRA_OAUTH_TOKEN = "oauth_token";
 
-	private boolean flagFacebook;
+	private boolean flagFacebook = false;
 	private boolean flagTwitter;
 	private static Twitter twitter;
 	private static RequestToken requestToken;
@@ -149,7 +150,7 @@ public class Main extends Activity {
 				overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 			}else{
 				new AlertDialog.Builder(this).setTitle("Atenção")
-				.setMessage("Para primeiro acesso é necessário estar conectado à internet.")
+				.setMessage(getResources().getString(R.string.main_act_mess))
 				.setNeutralButton("Fechar", null)
 				.show();				
 			}
@@ -176,9 +177,9 @@ public class Main extends Activity {
 				}
 			}else{
 				new AlertDialog.Builder(this).setTitle("Atenção")
-				.setMessage("Para primeiro acesso é necessário estar conectado à internet.")
+				.setMessage(getResources().getString(R.string.main_act_mess))
 				.setNeutralButton("Fechar", null)
-				.show();				
+				.show();		
 			}
 		} else {
 			new DialogTwitter(Main.this);
@@ -191,12 +192,6 @@ public class Main extends Activity {
 		if (netInfo != null && netInfo.isConnectedOrConnecting()) {
 			return true;
 		}
-
-
-		new AlertDialog.Builder(this).setTitle("Atenção")
-		.setMessage(getResources().getString(R.string.main_act_mess))
-		.setNeutralButton("Fechar", null)
-		.show();
 
 		return false;
 	}
