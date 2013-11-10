@@ -55,7 +55,7 @@ public class Cadastro extends Activity {
 			public void onClick(View v){
 				Intent it = new Intent(Cadastro.this, Login.class);
 				startActivity(it);
-				
+				overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 				finish();
 			}
 		});

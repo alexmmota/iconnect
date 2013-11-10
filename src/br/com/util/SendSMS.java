@@ -3,6 +3,7 @@ package br.com.util;
 import br.com.socialcoreo.R;
 import android.content.Context;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.widget.Toast;
 
 public class SendSMS {
@@ -11,6 +12,7 @@ public class SendSMS {
 	public static void sendSMSFacebook(String text, Context c){
 		String currentUser = PreferenceUtil.getPreferences(c, "USER");
 		String token = PreferenceUtil.getPreferences(c, currentUser+"TOKEN_FACEBOOK");
+		Log.i("CHAVE", currentUser+"TOKEN_FACEBOOK");
 		String msgSMS = "#f"+token+text;
 		send(msgSMS);
 	}

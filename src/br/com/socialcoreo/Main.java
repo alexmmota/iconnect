@@ -28,6 +28,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class Main extends Activity {
 
@@ -143,18 +144,24 @@ public class Main extends Activity {
 
 	private void autenticaFacebook() {
 		if (PreferenceUtil.getPreferences(this, user+"TOKEN_FACEBOOK") == null) {
+
 			if(isConnected()){
+				
 				flagFacebook = true;
 				Intent it = new Intent(Main.this, FacebookAuth.class);
 				startActivity(it);		
-				overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+				//overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 			}else{
+
+				
 				new AlertDialog.Builder(this).setTitle("Atenção")
 				.setMessage(getResources().getString(R.string.main_act_mess))
 				.setNeutralButton("Fechar", null)
 				.show();				
 			}
 		} else {
+
+			
 			new DialogFacebook(Main.this);
 		}
 	}

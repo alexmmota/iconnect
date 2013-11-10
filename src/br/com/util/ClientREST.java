@@ -58,7 +58,8 @@ public class ClientREST {
 				    String res = br.readLine();
 				    Log.i("TESTE","token_face: "+res);
 					PreferenceUtil.setPreferences(c, currentUser+"TOKEN_FACEBOOK", res);
-        			Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(c, "TOKEN_FACEBOOK"));
+        			Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(c, currentUser+"TOKEN_FACEBOOK"));
+        			Log.i("CHAVE", currentUser+"TOKEN_FACEBOOK");
 
 				} catch (MalformedURLException e1) {
 					e1.printStackTrace();
@@ -117,7 +118,7 @@ public class ClientREST {
 				    String res = br.readLine();
 				    Log.i("TESTE","token_face: "+res);
 					PreferenceUtil.setPreferences(c, currentUser+"TOKEN_TWITTER", res);
-        			Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(c, "TOKEN_TWITTER"));
+        			Log.i("TESTE","token: "+ PreferenceUtil.getPreferences(c, currentUser+"TOKEN_TWITTER"));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
