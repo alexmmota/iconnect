@@ -13,6 +13,7 @@ import br.com.Dialog.DialogMail;
 import br.com.Dialog.DialogMais;
 import br.com.Dialog.DialogTwitter;
 import br.com.util.ClientREST;
+import br.com.util.IConnectUtil;
 import br.com.util.PreferenceUtil;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -44,8 +45,6 @@ public class Main extends Activity {
 	static final String IEXTRA_OAUTH_TOKEN = "oauth_token";
 
 	private String user;
-	private boolean flagFacebook = false;
-	private boolean flagTwitter;
 	private static Twitter twitter;
 	private static RequestToken requestToken;
 	private ImageButton btExit;
@@ -101,6 +100,7 @@ public class Main extends Activity {
 		if (uri != null && uri.toString().startsWith(CALLBACK_URL)) {
 			String verifier = uri.getQueryParameter(IEXTRA_OAUTH_VERIFIER);
 			try {
+				IConnectUtil.flagTwitter = true;
 				AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
 				
 				ClientREST.getInstance().callWebServiceTwitter(getApplicationContext(), 
@@ -131,9 +131,36 @@ public class Main extends Activity {
 		class CallDialogFacebook extends AsyncTask<String, Void, Boolean>{
 		    @Override
 		    protected Boolean doInBackground(String... params) {
-				while((PreferenceUtil.getPreferences(Main.this, user+"TOKEN_FACEBOOK") == null)){
-				}
-				return true;
+		    	int cont=0;
+		    	
+		    	if(params[0].equals("FACEBOOK")){
+					while((PreferenceUtil.getPreferences(Main.this, user+"TOKEN_FACEBOOK") == null)){
+						if(cont < 3){
+							try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							cont++;
+						}else{
+							return false;
+						}
+					}
+		    	}else if(params[0].equals("TWITTER")){
+					while((PreferenceUtil.getPreferences(Main.this, user+"TOKEN_TWITTER") == null)){
+						if(cont < 3){
+							try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							cont++;
+						}else{
+							return false;
+						}
+					}
+		    	}
+				return true;		    		
 		    }
 
 		    @Override
@@ -149,20 +176,22 @@ public class Main extends Activity {
 		    protected void onPostExecute(Boolean result){
 		        super.onPostExecute(result);
 		        pbFacebbok.dismiss();
-		        if(result){
-					flagFacebook = false;
+		        if(result && IConnectUtil.flagFacebook){
 					autenticaFacebook();
 		        } 
+		        if(result && IConnectUtil.flagTwitter){
+					autenticaTwitter();
+		        }
+		        IConnectUtil.flagTwitter  = false;
+		        IConnectUtil.flagFacebook = false;
 		    }
 		}
-		if(flagFacebook){
-			new CallDialogFacebook().execute();			
+		if(IConnectUtil.flagFacebook){
+			new CallDialogFacebook().execute("FACEBOOK");
 		}
-		
-		if ((PreferenceUtil.getPreferences(this, user+"TOKEN_TWITTER") != null)&&(flagTwitter)) {
-			flagTwitter = false;
-			new DialogTwitter(Main.this);
-		}
+		if(IConnectUtil.flagTwitter){
+			new CallDialogFacebook().execute("TWITTER");
+		}		
 	}
 
 	@Override
@@ -176,7 +205,7 @@ public class Main extends Activity {
 		Log.i("TOKEN","face: "+PreferenceUtil.getPreferences(this, user+"TOKEN_FACEBOOK"));
 		if (PreferenceUtil.getPreferences(this, user+"TOKEN_FACEBOOK") == null) {
 			if(isConnected()){
-				flagFacebook = true;
+				IConnectUtil.flagFacebook = true;
 				Intent it = new Intent(Main.this, FacebookAuth.class);
 				startActivity(it);
 			}else{
@@ -193,7 +222,6 @@ public class Main extends Activity {
 	private void autenticaTwitter() {
 		if (PreferenceUtil.getPreferences(this, user+"TOKEN_TWITTER") == null) {
 			if(isConnected()){
-				flagTwitter = true;
 				ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
 				configurationBuilder.setOAuthConsumerKey(CONSUMER_KEY);
 				configurationBuilder.setOAuthConsumerSecret(CONSUMER_SECRET);
