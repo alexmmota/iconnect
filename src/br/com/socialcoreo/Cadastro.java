@@ -42,7 +42,6 @@ public class Cadastro extends Activity {
 						PreferenceUtil.setPreferences(Cadastro.this, "UsuarioAtivo", null);
 					}
 					
-					Toast.makeText(Cadastro.this, "Usuário cadastrado com sucesso.", Toast.LENGTH_LONG).show();
 					
 					Intent it = new Intent(Cadastro.this, Main.class);
 					startActivity(it);
@@ -66,11 +65,11 @@ public class Cadastro extends Activity {
 	public boolean validaCampos(EditText x, EditText y, EditText z){
 		
 		if(x.getText().toString().length() < 4){
-			Toast.makeText(Cadastro.this, "Usuário deve ter pelo menos 4 caracteres.", Toast.LENGTH_LONG).show();
+			Toast.makeText(Cadastro.this, getResources().getString(R.string.cad_act_mess1), Toast.LENGTH_LONG).show();
 		}else if(y.getText().toString().length() < 4){
-			Toast.makeText(Cadastro.this, "Senha deve ter pelo menos 4 caracteres.", Toast.LENGTH_LONG).show();
+			Toast.makeText(Cadastro.this, getResources().getString(R.string.cad_act_mess2), Toast.LENGTH_LONG).show();
 		}else if(!y.getText().toString().equals(z.getText().toString())){
-			Toast.makeText(Cadastro.this, "As senhas não correspondem.", Toast.LENGTH_LONG).show();
+			Toast.makeText(Cadastro.this, getResources().getString(R.string.cad_act_mess3), Toast.LENGTH_LONG).show();
 			z.setText("");
 		}else{
 			return true;

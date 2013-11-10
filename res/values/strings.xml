@@ -31,6 +31,7 @@
     <string name="dial_mail_et_mes_hint">Mensagem</string>
     <string name="dial_mail_bt_canc">Cancelar</string>
     <string name="dial_mail_bt_env">Enviar</string>
+    <string name="dial_mail_email_inc">Endereço de Email inválido!</string>
     
     <string name="dial_tw_title">Publicar no Twitter</string>
     <string name="dial_tw_icon_desc">Twitter Icon</string>
@@ -42,6 +43,7 @@
     <string name="log_act_et_pwd_hint">Senha</string>
     <string name="log_act_bt_ent">ENTRAR</string>
     <string name="log_act_bt_cad">CADASTRAR</string>
+    <string name="log_act_cb_man_con">Manter Conectado</string>
     
     <string name="main_act_logo_desc">Logotipo</string> 
     <string name="main_act_face_icon_desc">Facebook Icon</string>
@@ -56,5 +58,35 @@
     
     <string name="face_auth_face_icon_desc">Facebook Icon</string>
     <string name="face_auth_title">Ativar</string>
+    
+    <string name="cad_act_cb_man_con">Manter Conectado</string>
+    
+    <string name="dial_mais_feed">Feedback</string>
+    <string name="dial_mais_logoff">Fazer Logoff</string>
+    <string name="dial_mais_des_face">Desativar Facebook</string>
+    <string name="dial_mais_des_twt">Desativar Twitter</string>
+    <string name="dial_mais_feed_desc">Feedback Icon</string>
+    <string name="dial_mais_logoff_desc">Logoff Icon</string>
+    <string name="dial_mais_des_face_desc">Facebook Icon</string>
+    <string name="dial_mais_des_twt_desc">Twitter Icon</string>
+    <string name="dial_mais_title">Opções:</string>
+    <string name="dial_mais_desat_face">Deseja cancelar as publicações no seu Facebook pelo Iconnect?</string>
+    <string name="dial_mais_desat_twt">Deseja cancelar as publicações no seu Twitter pelo Iconnect?</string>
+    <string name="dial_mais_logoff_message">Deseja mesmo sair?</string>
+    
+    <string name="html_help_file">file:///android_asset/help-pt.html</string>
+    <string name="html_face_file">file:///android_asset/facebook-pt.html</string>
+    
+    <string name="resp_positiva">Sim</string>
+	<string name="resp_negativa">Não</string>
+    
+    <string name="cad_act_mess1">Usuário deve ter pelo menos 4 caracteres.</string>
+    <string name="cad_act_mess2">Senha deve ter pelo menos 4 caracteres.</string>
+    <string name="cad_act_mess3">As senhas não correspondem.</string>
+    
+    <string name="log_act_mess">Usuário ou senha inválidos.</string>
+    
+    <string name="main_act_mess">Para primeiro acesso é necessário estar conectado à internet.</string>
+    
     
 </resources>

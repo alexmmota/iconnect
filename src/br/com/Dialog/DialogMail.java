@@ -3,6 +3,7 @@ package br.com.Dialog;
 import br.com.socialcoreo.R;
 import br.com.util.PreferenceUtil;
 import br.com.util.SendSMS;
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
+@SuppressLint("DefaultLocale")
 public class DialogMail {
 	
 	Dialog dialog;

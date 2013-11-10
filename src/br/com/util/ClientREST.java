@@ -21,7 +21,8 @@ import android.util.Log;
 public class ClientREST {
 	private static ClientREST clientREST;
 	private String URL_REST_FACE = "https://br-com-iconnected.herokuapp.com/facebook/savetoken/";
-	private String URL_REST_TWITTER = "https://br-com-iconnected.herokuapp.com/twitter/savetoken/";;
+	private String URL_REST_TWITTER = "https://br-com-iconnected.herokuapp.com/twitter/savetoken/";
+	private String URL_REST_FEEDBACK = "https://br-com-iconnected.herokuapp.com/feedback/save/";
 
 	private ClientREST() {
 	}
@@ -65,6 +66,30 @@ public class ClientREST {
 		}).start();
 	}
 
+	public void callWebServiceFeedback(final Context c, final String user, final String text, final String data){
+		new Thread(new Runnable() {			
+			@Override
+			public void run() {
+				try {
+					HttpClient httpclient = new DefaultHttpClient();
+			    	HttpPost post = new HttpPost(URL_REST_FEEDBACK);
+					
+					List<NameValuePair> parametros = new ArrayList<NameValuePair>();
+					parametros.add(new BasicNameValuePair("user", user));
+					parametros.add(new BasicNameValuePair("message", text));
+					parametros.add(new BasicNameValuePair("date", data));
+					post.setEntity(new UrlEncodedFormEntity(parametros));
+
+					httpclient.execute(post);
+				} catch (MalformedURLException e1) {
+					e1.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}).start();
+	}
+	
 	public void callWebServiceTwitter(final Context c, final String accessToken, final String secretToken, final String user) {
 		final String telefone = getPhone(c);
 		new Thread(new Runnable() {

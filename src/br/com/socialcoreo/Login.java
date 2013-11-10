@@ -44,6 +44,9 @@ public class Login extends Activity {
 				senha = etSenha.getText().toString();
 				
 				if(validaUsuario()){
+					
+					PreferenceUtil.setPreferences(Login.this, "USER", etLogin.getText().toString());
+					
 					Intent it = new Intent(Login.this, Main.class);
 					startActivity(it);
 					overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -70,7 +73,7 @@ public class Login extends Activity {
 		
 		String check = PreferenceUtil.getPreferences(Login.this, "f/"+login.trim() + "/" + senha.trim());
 		if(check == null){
-			Toast.makeText(Login.this, "Usuário ou Senha Inválidos!", Toast.LENGTH_LONG).show();
+			Toast.makeText(Login.this, getResources().getString(R.string.log_act_mess), Toast.LENGTH_LONG).show();
 			etSenha.setText("");
 			return false;
 		}
