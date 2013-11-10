@@ -79,8 +79,7 @@
     
     <string name="resp_positiva">Yes</string>
 	<string name="resp_negativa">No</string>
-<<<<<<< HEAD
-    
+
 	<string name="cad_act_mess1">Username must have at least 4 characters.</string>
     <string name="cad_act_mess2">Password must have at least 4 characters.</string>
     <string name="cad_act_mess3">Passwords do not match.</string>
@@ -88,7 +87,6 @@
     <string name="log_act_mess">Invalid user or password.</string>
     
     <string name="main_act_mess">On first access is necessary to be connected to the internet.</string>
-=======
->>>>>>> 9c182c558f8b73c3b1115cb8ccdbee0dffb8a301
+
     
 </resources>
