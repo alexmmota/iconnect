@@ -10,6 +10,7 @@ import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 import br.com.socialcoreo.R;
 import br.com.util.ClientREST;
+import br.com.util.IConnectUtil;
 import br.com.util.PreferenceUtil;
 import android.app.Activity;
 import android.content.Context;
@@ -71,9 +72,11 @@ public class FacebookAuth extends Activity {
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		uiHelper.onActivityResult(requestCode, resultCode, data);
+		IConnectUtil.flagFacebook = true;
 
 		Session.getActiveSession().onActivityResult(this, requestCode,
 				resultCode, data);
+		
 		if (Session.getActiveSession().isOpened()) {
 			Request.executeMeRequestAsync(Session.getActiveSession(),
 					new Request.GraphUserCallback() {

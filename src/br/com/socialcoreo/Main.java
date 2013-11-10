@@ -205,7 +205,6 @@ public class Main extends Activity {
 		Log.i("TOKEN","face: "+PreferenceUtil.getPreferences(this, user+"TOKEN_FACEBOOK"));
 		if (PreferenceUtil.getPreferences(this, user+"TOKEN_FACEBOOK") == null) {
 			if(isConnected()){
-				IConnectUtil.flagFacebook = true;
 				Intent it = new Intent(Main.this, FacebookAuth.class);
 				startActivity(it);
 			}else{
