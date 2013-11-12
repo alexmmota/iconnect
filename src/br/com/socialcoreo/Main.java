@@ -209,6 +209,13 @@ public class Main extends Activity {
 		MenuInflater inflater = getMenuInflater();
 	    return super.onCreateOptionsMenu(menu);
 	}
+	
+	@Override
+    public void onPause(){
+        super.onPause();
+        if(pbFacebbok != null)
+        	pbFacebbok.dismiss();
+    }
 
 	private void autenticaFacebook() {
 		Log.i("TOKEN","face: "+PreferenceUtil.getPreferences(this, user+"TOKEN_FACEBOOK"));
